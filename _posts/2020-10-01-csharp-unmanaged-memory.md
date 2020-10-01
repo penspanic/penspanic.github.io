@@ -2,6 +2,8 @@
 layout: post
 title: csharp-unmanaged memory
 date: 2020-10-01 10:32 +0900
+image: "empty"
+category: CSharp_Dotnet
 ---
 
 ## Managed / Unmanaged Memory

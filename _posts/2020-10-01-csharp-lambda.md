@@ -2,6 +2,8 @@
 layout: post
 title: CSharp-Lambda
 date: 2020-10-01 00:13 +0900
+image: "empty"
+category: CSharp_Dotnet
 ---
 
 # C# 람다의 내부 구현에 대해  
