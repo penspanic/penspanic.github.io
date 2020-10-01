@@ -31,10 +31,7 @@ Assembly를 나누어, 모듈별 의존성을 명확하게 관리하고, 컴파�
 
 [스크립트 컴파일 및 어셈블리 정의 파일(Script compilation and assembly definition files) - Unity 매뉴얼](https://docs.unity3d.com/kr/2018.1/Manual/ScriptCompilationAssemblyDefinitionFiles.html)
 
-!
 ![image2](/assets/img/assembly-definition_2.png)
-
-!
 ![image3](/assets/img/assembly-definition_3.png)
 
 ## 기타
