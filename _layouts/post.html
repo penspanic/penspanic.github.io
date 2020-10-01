@@ -4,7 +4,11 @@ layout: default
 
 <div class="content">
 
-    <p>Published: {{ page.date | date: "%b %-d, %Y" }} by {{ page.author }}</p>
+    <p>Published: {{ page.date | date: "%b %-d, %Y" }} by {{ page.author }}
+      {% if page.category != '' %}
+      &nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;{{ page.category }}
+      {% endif %}
+    </p>
 
     {{ content }}
 </div>
@@ -14,6 +18,10 @@ layout: default
     <span class="tag is-primary">{{ tag }}</span>
     {% endfor %}
 </div>
+
+<!-- <div class="category">
+  <span class="category is-primary">{{ page.category }}</span>
+</div> -->
 
 {% unless site.hide_share_buttons %}
 {% include share-buttons.html %}
