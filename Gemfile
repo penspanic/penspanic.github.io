@@ -29,3 +29,7 @@ end
 gem "wdm", "~> 0.1.1", :platforms => [:mingw, :x64_mingw, :mswin]
 gem "bulma-clean-theme"
 gem 'jekyll-compose', group: [:jekyll_plugins]
+
+source "https://rubygems.org"
+
+gem "github-pages", group: :jekyll_plugins
