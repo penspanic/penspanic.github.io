@@ -20,7 +20,7 @@ Assembly를 나누어, 모듈별 의존성을 명확하게 관리하고, 컴파�
 기본 Unity 컴파일 시스템은 2개의 Assembly를 만들어낸다.
 
 
-![image1](/assets/img/assembly-definition_1.png)
+![image1](/assets/img/1/assembly-definition_1.png)
 
 프로젝트 안 소스파일들이 기본적으로 Assembly-CSharp에 포함되고,
 "Editor" 란 이름의 Directory안의 소스파일들은 Assembly-Csharp-Editor에 포함된다.
@@ -31,8 +31,8 @@ Assembly를 나누어, 모듈별 의존성을 명확하게 관리하고, 컴파�
 
 [스크립트 컴파일 및 어셈블리 정의 파일(Script compilation and assembly definition files) - Unity 매뉴얼](https://docs.unity3d.com/kr/2018.1/Manual/ScriptCompilationAssemblyDefinitionFiles.html)
 
-![image2](/assets/img/assembly-definition_2.png)
-![image3](/assets/img/assembly-definition_3.png)
+![image2](/assets/img/1/assembly-definition_2.png)
+![image3](/assets/img/1/assembly-definition_3.png)
 
 ## 기타
 
