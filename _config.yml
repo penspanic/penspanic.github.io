@@ -7,7 +7,7 @@ description: >
 baseurl: ""
 #url: "https://www.csrhymes.com"
 permalink: pretty
-#favicon: /path/to/favicon.png
+favicon: /assets/favicon.ico
 #gh_sponsor: chrisrhymes
 #hide_share_buttons: true
 
