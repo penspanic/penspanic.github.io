@@ -1,4 +1,5 @@
 ---
+encoding: UTF-8
 layout: post
 title: 개발중인 프로젝트 구성안 - 1
 date: 2020-10-01 14:15 +0900
