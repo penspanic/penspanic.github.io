@@ -25,7 +25,7 @@ disqus:
 plugins:
   - jekyll-sitemap
   - jekyll-paginate
-  - jekyll-feed
+  #- jekyll-feed
   - jekyll-seo-tag
   - kramdown
   - rouge
