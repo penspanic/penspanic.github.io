@@ -1,5 +1,6 @@
 ---
 layout: default
+comments: true
 ---
 
 <div class="content">
@@ -27,6 +28,6 @@ layout: default
 {% include share-buttons.html %}
 {% endunless %}
 
-{% if site.disqus.shortname %}
-  {% include disqus.html %}
+{% if page.comments != false %}
+  {% include disqus_comments.html %}
 {% endif %}
