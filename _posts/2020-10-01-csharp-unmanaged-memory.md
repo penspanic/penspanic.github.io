@@ -12,7 +12,7 @@ category: CSharp_Dotnet
 
 ### Managed Memory
 
-CLR(Command Language Runtime)이 관리하는 메모리.  Garbage Collection의 대상이 된다.
+CLR(Common Language Runtime)이 관리하는 메모리.  Garbage Collection의 대상이 된다.
 
 ### Unmanaged Memory
 
