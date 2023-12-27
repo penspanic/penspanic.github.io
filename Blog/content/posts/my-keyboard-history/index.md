@@ -19,19 +19,14 @@ category: etc
 
 엄청나게 다양한 종류의 배열을 가진 키보드가 시중에 존재한다.
 
-여느 개발자가 그렇듯 나도 처음엔 보편적인 텐키리스 키보드를 사용했다.  
-
-<p align="center">
-<img width="500" src="https://scontent-gmp1-1.xx.fbcdn.net/v/t1.0-9/16939709_970658353066390_776308450024232_n.jpg?_nc_cat=103&_nc_sid=8bfeb9&_nc_ohc=wZFdwy_OAtkAX86rtD0&_nc_ht=scontent-gmp1-1.xx&oh=4a2b8dc45d1df16f65d22fe3e3063051&oe=5F9D9447">   
-</p>
-*취업후 첫 키보드 Realforce 87U*
+여느 개발자가 그렇듯 나도 취업 직후엔 보편적인 텐키리스 키보드인 Realforce 87U를 사용했다.  
 
 ---
 
 그러다 2년여전 Mac 세계로 넘어오면서 매직키보드를 사용하게 됐는데,  
 이 것이 내가 처음 사용한 **미니키보드**라고 부를 수 있는 것이었다.
 
-![매직키보드](/assets/img/2/magic keyboard.png)
+![매직키보드](magic_keyboard.png)
 
 이 키보드는 그 당시 사용하던 단축키 사용법을 뒤엎게 만들었다.  
 
@@ -65,7 +60,7 @@ category: etc
 
 그렇게 처음 구매한 기계식 미니 키보드는 Vortex Tab60.
 
-![vortex TAB60](/assets/img/2/vortex_tab60.png)
+![vortex TAB60](vortex_tab60.png)
 *저소음 적축. 블루투스 됨.*
 
 본격적으로 방향키조차 없는 키보드!  
@@ -80,7 +75,7 @@ Capslock을 Fn키로 리매핑해서 썼고, 그렇기에 왼쪽 새끼손가락
 하지만 더 괴랄한 단축키 조합..  
 
 예를 들어, **현재 커서를 선택과 함께 단어 단위로 왼쪽으로 이동**
-![shortcut_example](/assets/img/2/shortcut_example.png)
+![shortcut_example](shortcut_example.png)
  * (기존) Shift + Option + ⬅️
  * (변경) Shift + Option + **Fn + J**
 
@@ -89,7 +84,7 @@ Capslock을 Fn키로 리매핑해서 썼고, 그렇기에 왼쪽 새끼손가락
 ---
 그리고,, 대망의 **HHKB**.
 
-![해피해킹_1](/assets/img/2/hhkb_1.jpg)
+![해피해킹_1](hhkb_1.jpg)
 *미니키보드 형제.*
 
 왜 이것을 구매하게 되었는지 동기는 사실 잘 기억나지 않는다.  
@@ -112,14 +107,14 @@ Hybrid Type-s(블루투스 지원 신형 모델)의 출시로 과감해졌던 �
 
 이제는 더 편한 레이아웃을 찾는다기 보단.. 취미 생활의 수준이 되어버림.
 
-![drop alt](/assets/img/2/drop_alt.png)
+![drop alt](drop_alt.png)
 *가장 최근에 구매한 **Drop Alt** 키보드.*
 
 키캡, 스위치, 스테빌라이저 3가지 개조했다.  
 이 친구는 그래도 방향키는 잘 달려있다.
 
 그리고 **QMK**가 지원되는 보드라서, 직접 키보드 **firmware**를 수정할 수 있다!  
-![qmk_keymap](/assets/img/2/qmk_keymap.png)
+![qmk_keymap](qmk_keymap.png)
 *빨간 부분은 Layer1에 숫자 키패드 매핑해둔 것.*
 
 아직 심화 부분까지 건드려 보진 않았지만, 재밌고 유용한 것임은 분명하다.
