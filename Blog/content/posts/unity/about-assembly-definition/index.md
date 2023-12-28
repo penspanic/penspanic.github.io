@@ -3,7 +3,8 @@ layout: post
 title: Unity - Assembly Definition
 date: 2019-09-18 18:08 +0900
 image: "empty"
-category: Unity
+categories: ["Unity"]
+tags: ["C#", "Unity"]
 ---
 # Unity - Assembly Definition
 

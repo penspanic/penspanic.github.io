@@ -3,7 +3,8 @@ layout: post
 title: C# lock 에 대해
 date: 2020-10-10 16:05 +0900
 image: empty
-category: Programming
+categories: ["CSharp"]
+tags: ["C#"]
 ---
 
 ## lock 내부 구현, 키워드

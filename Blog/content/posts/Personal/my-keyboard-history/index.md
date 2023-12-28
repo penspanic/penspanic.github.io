@@ -3,7 +3,8 @@ layout: post
 title: 나의 키보드 변천사
 date: 2020-10-03 12:04 +0900
 image: empty
-category: etc
+categories: ["Personal"]
+tags: ["Keyboard"]
 ---
 
 # 나의 키보드 변천사

@@ -3,7 +3,8 @@ layout: post
 title: 개발중인 프로젝트 구성안 - 4
 date: 2020-10-10 16:05 +0900
 image: empty
-category: Programming
+categories: ["Architecture"]
+tags: ["Architecture", "C#", ".Net", ".Net"]
 ---
 
 ## 프로젝트내 코드 생성 활용

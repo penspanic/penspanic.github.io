@@ -3,7 +3,8 @@ layout: post
 title: 개발중인 프로젝트 구성안 - 3
 date: 2020-10-04 21:01 +0900
 image: empty
-category: Programming
+categories: ["Architecture"]
+tags: ["Architecture", "C#", ".Net", "Unity", "Multiplay", ".Net"]
 ---
 
 ## Library, Package 활용

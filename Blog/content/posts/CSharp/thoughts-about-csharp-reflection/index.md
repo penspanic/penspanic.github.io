@@ -3,7 +3,8 @@ layout: post
 title: C# - Reflection에 대한 고찰
 date: 2020-10-09 12:02 +0900
 image: empty
-category: CSharp_Dotnet
+categories: ["CSharp"]
+tags: ["C#"]
 ---
 
 ## Reflection에 대한 고찰과 약간의 팁

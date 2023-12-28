@@ -74,8 +74,8 @@ params:
 
   # home-info mode
   homeInfoParams:
-    Title: "Hi there \U0001F44B"
-    Content: Welcome to my blog
+    Title: "penspanic의 Devlog"
+    #Content: Welcome to my blog
 
   socialIcons:
     # - name: x
@@ -116,6 +116,10 @@ params:
     minMatchCharLength: 0
     limit: 10 # refer: https://www.fusejs.io/api/methods.html#search
     keys: ["title", "permalink", "summary", "content"]
+
+taxonomies:
+  category: categories
+  tag: tags
 menu:
   main:
     - identifier: categories

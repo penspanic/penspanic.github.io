@@ -4,7 +4,8 @@ layout: post
 title: 개발중인 프로젝트 구성안 - 1
 date: 2020-10-01 14:15 +0900
 image: empty
-category: Programming
+categories: ["Architecture"]
+tags: ["Architecture"]
 ---
 
 ## 현재 개발중인 프로젝트의 구성에 대해 - 1

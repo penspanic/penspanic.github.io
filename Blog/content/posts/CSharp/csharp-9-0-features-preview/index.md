@@ -3,7 +3,8 @@ layout: post
 title: C# 9.0 신기능 프리뷰
 date: 2020-12-07 12:38 +0900
 image: empty
-category: CSharp_Dotnet
+categories: ["CSharp"]
+tags: ["C#"]
 --- 
 
 ## C# 9.0 써보기전 주관적 프리뷰
