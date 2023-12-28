@@ -1,1 +1,0 @@
-bundle exec jekyll serve --incremental --port 34567 --unpublished
