@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Multiplay on penspanic&#39;s Devlog</title>
     <link>https://penspanic.github.io/tags/multiplay/</link>
@@ -10,12 +10,28 @@
       <link>https://penspanic.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
-    <language>ko-kr</language><atom:link href="https://penspanic.github.io/tags/multiplay/index.xml" rel="self" type="application/rss+xml" />
+    <language>ko-kr</language>
+    <lastBuildDate>Sun, 04 Oct 2020 18:20:29 +0900</lastBuildDate>
+    <atom:link href="https://penspanic.github.io/tags/multiplay/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>개발중인 프로젝트 구성안 - 3</title>
+      <link>https://penspanic.github.io/posts/architecture/2020-10-in-dev-project-3/</link>
+      <pubDate>Sun, 04 Oct 2020 18:20:29 +0900</pubDate>
+      <guid>https://penspanic.github.io/posts/architecture/2020-10-in-dev-project-3/</guid>
+      <description>Library, Package 활용 세번째 포스트는 프로젝트에서 사용중인 Library와 Package들에 대해 소개하려 한다.
+MessagePack GitHub
+프로젝트 시작시 Serialization Library를 어떤 것을 사용할지 꽤 고민했었다.
+이전 프로젝트에선 client &amp;lt;-&amp;gt; server 통신시 Protobuf를 사용했었는데, 이게 꽤나 불편했었다. -_-
+IDL을 수정하고, Compile하고, Compile된 결과물을 각각 project에 복사하고.
+(자동화 스크립트가 있다고 하더라도 꽤나 귀찮았다.)
+이번 프로젝트에선 모든 Language를 C#으로 통일했기에, IDL을 사용할 필요가 없어져서
+Protobuf은 후보 선상에서 제외.
+또한 output에 meta-data 없이 payload 만 필요하기 때문에, 그 면에서도 MessagePack이 적합하다고 판단했다.</description>
+    </item>
     <item>
       <title>개발중인 프로젝트 구성안 - 2</title>
       <link>https://penspanic.github.io/posts/architecture/2020-10-in-dev-project-2/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
+      <pubDate>Fri, 02 Oct 2020 18:20:29 +0900</pubDate>
       <guid>https://penspanic.github.io/posts/architecture/2020-10-in-dev-project-2/</guid>
       <description>현재 개발중인 프로젝트의 구성에 대해 - 2 먼저, Repository에 대해.
 Repository client-dash 유니티 클라이언트 프로젝트
@@ -28,23 +44,5 @@ data-dash, lib-dash dummyclient-dash 더미 클라이언트. 인게임 전투, A
 .Net Core 3.x
 data-dash, lib-dash etc AWS Lambda 에서 실행되는 MicroService 등 눈치 채신 분들도 있겠지만, data-dash, lib-dash는 Submodule 이다.</description>
     </item>
-    
-    <item>
-      <title>개발중인 프로젝트 구성안 - 3</title>
-      <link>https://penspanic.github.io/posts/architecture/2020-10-in-dev-project-3/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://penspanic.github.io/posts/architecture/2020-10-in-dev-project-3/</guid>
-      <description>Library, Package 활용 세번째 포스트는 프로젝트에서 사용중인 Library와 Package들에 대해 소개하려 한다.
-MessagePack GitHub
-프로젝트 시작시 Serialization Library를 어떤 것을 사용할지 꽤 고민했었다.
-이전 프로젝트에선 client &amp;lt;-&amp;gt; server 통신시 Protobuf를 사용했었는데, 이게 꽤나 불편했었다. -_-
-IDL을 수정하고, Compile하고, Compile된 결과물을 각각 project에 복사하고.
-(자동화 스크립트가 있다고 하더라도 꽤나 귀찮았다.)
-이번 프로젝트에선 모든 Language를 C#으로 통일했기에, IDL을 사용할 필요가 없어져서
-Protobuf은 후보 선상에서 제외.
-또한 output에 meta-data 없이 payload 만 필요하기 때문에, 그 면에서도 MessagePack이 적합하다고 판단했다.</description>
-    </item>
-    
   </channel>
 </rss>
