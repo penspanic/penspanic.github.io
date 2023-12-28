@@ -18,7 +18,7 @@
       <link>https://penspanic.github.io/posts/architecture/2020-10-in-dev-project-3/</link>
       <pubDate>Sun, 04 Oct 2020 18:20:29 +0900</pubDate>
       <guid>https://penspanic.github.io/posts/architecture/2020-10-in-dev-project-3/</guid>
-      <description>Library, Package 활용 세번째 포스트는 프로젝트에서 사용중인 Library와 Package들에 대해 소개하려 한다.
+      <description>세번째 포스트는 프로젝트에서 사용중인 Library와 Package들에 대해 소개하려 한다.
 MessagePack GitHub
 프로젝트 시작시 Serialization Library를 어떤 것을 사용할지 꽤 고민했었다.
 이전 프로젝트에선 client &amp;lt;-&amp;gt; server 통신시 Protobuf를 사용했었는데, 이게 꽤나 불편했었다. -_-
@@ -33,7 +33,7 @@ Protobuf은 후보 선상에서 제외.
       <link>https://penspanic.github.io/posts/architecture/2020-10-in-dev-project-2/</link>
       <pubDate>Fri, 02 Oct 2020 18:20:29 +0900</pubDate>
       <guid>https://penspanic.github.io/posts/architecture/2020-10-in-dev-project-2/</guid>
-      <description>현재 개발중인 프로젝트의 구성에 대해 - 2 먼저, Repository에 대해.
+      <description>먼저, Repository에 대해.
 Repository client-dash 유니티 클라이언트 프로젝트
 Unity 2019.4x, .Net 4.x
 data-dash, lib-dash server-dash 로비서버, 매치서버, 인게임 서버등 서비스에 필요한 서버들의 모음
@@ -49,11 +49,12 @@ data-dash, lib-dash etc AWS Lambda 에서 실행되는 MicroService 등 눈치 �
       <link>https://penspanic.github.io/posts/unity/about-assembly-definition/</link>
       <pubDate>Fri, 18 Sep 2020 18:20:29 +0900</pubDate>
       <guid>https://penspanic.github.io/posts/unity/about-assembly-definition/</guid>
-      <description>Unity - Assembly Definition 요약 Assembly를 나누어, 모듈별 의존성을 명확하게 관리하고, 컴파일 시간을 줄인다.
+      <description>요약 Assembly를 나누어, 모듈별 의존성을 명확하게 관리하고, 컴파일 시간을 줄인다.
 내용 기본 Unity 컴파일 시스템은 2개의 Assembly를 만들어낸다.
 프로젝트 안 소스파일들이 기본적으로 Assembly-CSharp에 포함되고, &amp;ldquo;Editor&amp;rdquo; 란 이름의 Directory안의 소스파일들은 Assembly-Csharp-Editor에 포함된다.
 결국, 특정 소스코드를 1줄만 수정을 해도 그 소스코드가 포함된 어셈블리를 다시 컴파일 해야 한다. 이 과정에서 프로젝트가 커지고, 모듈이 많이 붙을 수록 컴파일 시간이 길어진다.
-이 문제를 해결할 수 있는 기능이 Unity 2018에 추가된 Assembly Definition 기능이다.</description>
+이 문제를 해결할 수 있는 기능이 Unity 2018에 추가된 Assembly Definition 기능이다.
+스크립트 컴파일 및 어셈블리 정의 파일(Script compilation and assembly definition files) - Unity 매뉴얼</description>
     </item>
   </channel>
 </rss>

@@ -170,7 +170,7 @@ if (!doNotTrack) {
     </h2>
   </header>
   <div class="entry-content">
-    <p>Library, Package 활용 세번째 포스트는 프로젝트에서 사용중인 Library와 Package들에 대해 소개하려 한다.
+    <p>세번째 포스트는 프로젝트에서 사용중인 Library와 Package들에 대해 소개하려 한다.
 MessagePack GitHub
 프로젝트 시작시 Serialization Library를 어떤 것을 사용할지 꽤 고민했었다.
 이전 프로젝트에선 client &lt;-&gt; server 통신시 Protobuf를 사용했었는데, 이게 꽤나 불편했었다. -_-
@@ -180,7 +180,7 @@ IDL을 수정하고, Compile하고, Compile된 결과물을 각각 project에 �
 Protobuf은 후보 선상에서 제외.
 또한 output에 meta-data 없이 payload 만 필요하기 때문에, 그 면에서도 MessagePack이 적합하다고 판단했다....</p>
   </div>
-  <footer class="entry-footer"><span title='2020-10-04 18:20:29 +0900 KST'>October 4, 2020</span>&nbsp;·&nbsp;3 min&nbsp;·&nbsp;487 words&nbsp;·&nbsp;penspanic</footer>
+  <footer class="entry-footer"><span title='2020-10-04 18:20:29 +0900 KST'>October 4, 2020</span>&nbsp;·&nbsp;3 min&nbsp;·&nbsp;484 words&nbsp;·&nbsp;penspanic</footer>
   <a class="entry-link" aria-label="post link to 개발중인 프로젝트 구성안 - 3" href="https://penspanic.github.io/posts/architecture/2020-10-in-dev-project-3/"></a>
 </article>
 
@@ -190,7 +190,7 @@ Protobuf은 후보 선상에서 제외.
     </h2>
   </header>
   <div class="entry-content">
-    <p>현재 개발중인 프로젝트의 구성에 대해 - 2 먼저, Repository에 대해.
+    <p>먼저, Repository에 대해.
 Repository client-dash 유니티 클라이언트 프로젝트
 Unity 2019.4x, .Net 4.x
 data-dash, lib-dash server-dash 로비서버, 매치서버, 인게임 서버등 서비스에 필요한 서버들의 모음
@@ -201,7 +201,7 @@ data-dash, lib-dash dummyclient-dash 더미 클라이언트. 인게임 전투, A
 .Net Core 3.x
 data-dash, lib-dash etc AWS Lambda 에서 실행되는 MicroService 등 눈치 채신 분들도 있겠지만, data-dash, lib-dash는 Submodule 이다....</p>
   </div>
-  <footer class="entry-footer"><span title='2020-10-02 18:20:29 +0900 KST'>October 2, 2020</span>&nbsp;·&nbsp;2 min&nbsp;·&nbsp;288 words&nbsp;·&nbsp;penspanic</footer>
+  <footer class="entry-footer"><span title='2020-10-02 18:20:29 +0900 KST'>October 2, 2020</span>&nbsp;·&nbsp;2 min&nbsp;·&nbsp;281 words&nbsp;·&nbsp;penspanic</footer>
   <a class="entry-link" aria-label="post link to 개발중인 프로젝트 구성안 - 2" href="https://penspanic.github.io/posts/architecture/2020-10-in-dev-project-2/"></a>
 </article>
 
@@ -211,13 +211,14 @@ data-dash, lib-dash etc AWS Lambda 에서 실행되는 MicroService 등 눈치 �
     </h2>
   </header>
   <div class="entry-content">
-    <p>Unity - Assembly Definition 요약 Assembly를 나누어, 모듈별 의존성을 명확하게 관리하고, 컴파일 시간을 줄인다.
+    <p>요약 Assembly를 나누어, 모듈별 의존성을 명확하게 관리하고, 컴파일 시간을 줄인다.
 내용 기본 Unity 컴파일 시스템은 2개의 Assembly를 만들어낸다.
 프로젝트 안 소스파일들이 기본적으로 Assembly-CSharp에 포함되고, “Editor” 란 이름의 Directory안의 소스파일들은 Assembly-Csharp-Editor에 포함된다.
 결국, 특정 소스코드를 1줄만 수정을 해도 그 소스코드가 포함된 어셈블리를 다시 컴파일 해야 한다. 이 과정에서 프로젝트가 커지고, 모듈이 많이 붙을 수록 컴파일 시간이 길어진다.
-이 문제를 해결할 수 있는 기능이 Unity 2018에 추가된 Assembly Definition 기능이다....</p>
+이 문제를 해결할 수 있는 기능이 Unity 2018에 추가된 Assembly Definition 기능이다.
+스크립트 컴파일 및 어셈블리 정의 파일(Script compilation and assembly definition files) - Unity 매뉴얼...</p>
   </div>
-  <footer class="entry-footer"><span title='2020-09-18 18:20:29 +0900 KST'>September 18, 2020</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;113 words&nbsp;·&nbsp;penspanic</footer>
+  <footer class="entry-footer"><span title='2020-09-18 18:20:29 +0900 KST'>September 18, 2020</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;101 words&nbsp;·&nbsp;penspanic</footer>
   <a class="entry-link" aria-label="post link to Unity - Assembly Definition" href="https://penspanic.github.io/posts/unity/about-assembly-definition/"></a>
 </article>
     </main>

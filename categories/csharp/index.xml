@@ -27,11 +27,11 @@ record type 새로운 Reference Type이 추가되었다.
 내가 생각하는 도입 사유 기존의 class(reference type)으로 immutable type을 구현하기 좀 까다로웠다.</description>
     </item>
     <item>
-      <title>C# lock 에 대해</title>
+      <title>C# lock의 내부 구현</title>
       <link>https://penspanic.github.io/posts/csharp/csharp-lock-implementation/</link>
       <pubDate>Sat, 10 Oct 2020 18:20:29 +0900</pubDate>
       <guid>https://penspanic.github.io/posts/csharp/csharp-lock-implementation/</guid>
-      <description>lock 내부 구현, 키워드 C# 프로그래밍을 하다보면 자연스레 멀티쓰레딩 환경에서 자원 획득 제한이 필요한 경우 lock을 사용했었다.
+      <description>C# 프로그래밍을 하다보면 자연스레 멀티쓰레딩 환경에서 자원 획득 제한이 필요한 경우 lock을 사용했었다.
 이 lock 키워드 및 블럭을 사용했을 때 내부적으로 어떻게 동작되는지 궁금해서 알아보았다.
 lock 문 lock statement(lock 문) Microsoft Docs
 lock은 공식 문서에 문이라고 한다.
@@ -40,11 +40,11 @@ Language Reference Statement Keywords lock Statement 위와 같은 구조로 Doc
 private void DoAdd(int value) { lock (_collection) { _collection.Add(value); } } 위 코드를 Decompile시 아래의 il로 해석된다.</description>
     </item>
     <item>
-      <title>csharp-unmanaged memory</title>
+      <title>C# Unmanaged Memory</title>
       <link>https://penspanic.github.io/posts/csharp/csharp-unmanaged-memory/</link>
       <pubDate>Mon, 28 Sep 2020 18:20:29 +0900</pubDate>
       <guid>https://penspanic.github.io/posts/csharp/csharp-unmanaged-memory/</guid>
-      <description>Managed / Unmanaged Memory Managed Memory CLR(Common Language Runtime)이 관리하는 메모리. Garbage Collection의 대상이 된다.
+      <description>Managed Memory CLR(Common Language Runtime)이 관리하는 메모리. Garbage Collection의 대상이 된다.
 Unmanaged Memory Managed Memory가 아닌 것.
 C# 에서도 C++ 에서처럼 직접 메모리를 할당 할 수 있다.
 IntPtr memory = Marshal.AllocHGlobal(100); for (int i = 0; i &amp;lt; 100; ++i) { ((byte*) memory)[i] = (byte)(i + 1); } Marshal.FreeHGlobal(memory); stackalloc 표현식 Stack 에 메모리가 할당됨. 그 Stack을 벗어날 때 자동으로 메모리 해제.
@@ -55,7 +55,7 @@ IntPtr memory = Marshal.AllocHGlobal(100); for (int i = 0; i &amp;lt; 100; ++i) 
       <link>https://penspanic.github.io/posts/csharp/thoughts-about-csharp-reflection/</link>
       <pubDate>Fri, 25 Sep 2020 18:20:29 +0900</pubDate>
       <guid>https://penspanic.github.io/posts/csharp/thoughts-about-csharp-reflection/</guid>
-      <description>Reflection에 대한 고찰과 약간의 팁 C# 프로그래밍 씬에서 가장 흔한 오해중 하나는
+      <description>C# 프로그래밍 씬에서 가장 흔한 오해중 하나는
 &amp;ldquo;Reflection은 느리니까 자제해야 한다.&amp;rdquo;
 라는 것.
 처음엔 그냥 그런가보다 했다. C#에 대한 이해도가 많이 부족했으니.
@@ -63,15 +63,16 @@ IntPtr memory = Marshal.AllocHGlobal(100); for (int i = 0; i &amp;lt; 100; ++i) 
 제대로 이해하고 적절히 사용해야 할 때가 온 것이다.
 깊게 파보고, 프로파일링 - 최적화 해보고. 그 과정들을 통해 지금은
 올바른 Reflection 사용은 현대적이고 발전된 코드를 작성할 수 있다.
-라고 생각하게 됐다.</description>
+라고 생각하게 됐다.
+느리다는 것 처리 시간이 오래 걸린다.</description>
     </item>
     <item>
-      <title>CSharp-Lambda</title>
+      <title>C# 람다 내부 구현</title>
       <link>https://penspanic.github.io/posts/csharp/csharp-lambda/</link>
       <pubDate>Sun, 20 Sep 2020 18:20:29 +0900</pubDate>
       <guid>https://penspanic.github.io/posts/csharp/csharp-lambda/</guid>
-      <description>C# 람다의 내부 구현에 대해 마법은 없다. Lambda를 컴파일러가 어떤식으로 구현하는지 알아둘 필요가 있다. public static class LambdaExample { public static void Run() { int localInt = 123456789; string localString = &amp;#34;LocalString&amp;#34;; ActionRunner(() =&amp;gt; { Console.WriteLine($&amp;#34;{localInt}, {localString}&amp;#34;); }); } private static void ActionRunner(Action action) { action?.Invoke(); } } 위의 코드는 아래와 같이 해석될 수 있다.
-public static class LambdaExampleTranslated { public class LambdaClass { public int localInt; public string localString; public void Run() { Console.</description>
+      <description>마법은 없다. Lambda를 컴파일러가 어떤식으로 구현하는지 알아둘 필요가 있다. public static class LambdaExample { public static void Run() { int localInt = 123456789; string localString = &amp;#34;LocalString&amp;#34;; ActionRunner(() =&amp;gt; { Console.WriteLine($&amp;#34;{localInt}, {localString}&amp;#34;); }); } private static void ActionRunner(Action action) { action?.Invoke(); } } 위의 코드는 아래와 같이 해석될 수 있다.
+public static class LambdaExampleTranslated { public class LambdaClass { public int localInt; public string localString; public void Run() { Console.WriteLine($&amp;#34;{localInt}, {localString}&amp;#34;); } } public static void Run() { int localInt = 123456789; string localString = &amp;#34;LocalString&amp;#34;; ActionRunner(new LambdaClass { localInt = localInt, localString = localString } .</description>
     </item>
   </channel>
 </rss>

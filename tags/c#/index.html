@@ -184,11 +184,11 @@ record type 새로운 Reference Type이 추가되었다.
 
 <article class="post-entry tag-entry"> 
   <header class="entry-header">
-    <h2 class="entry-hint-parent">C# lock 에 대해
+    <h2 class="entry-hint-parent">C# lock의 내부 구현
     </h2>
   </header>
   <div class="entry-content">
-    <p>lock 내부 구현, 키워드 C# 프로그래밍을 하다보면 자연스레 멀티쓰레딩 환경에서 자원 획득 제한이 필요한 경우 lock을 사용했었다.
+    <p>C# 프로그래밍을 하다보면 자연스레 멀티쓰레딩 환경에서 자원 획득 제한이 필요한 경우 lock을 사용했었다.
 이 lock 키워드 및 블럭을 사용했을 때 내부적으로 어떻게 동작되는지 궁금해서 알아보았다.
 lock 문 lock statement(lock 문) Microsoft Docs
 lock은 공식 문서에 문이라고 한다.
@@ -196,8 +196,8 @@ Language Reference Statement Keywords lock Statement 위와 같은 구조로 Doc
 이 것의 동작 방식을 까보려면 역시 Decompile.
 private void DoAdd(int value) { lock (_collection) { _collection.Add(value); } } 위 코드를 Decompile시 아래의 il로 해석된다....</p>
   </div>
-  <footer class="entry-footer"><span title='2020-10-10 18:20:29 +0900 KST'>October 10, 2020</span>&nbsp;·&nbsp;2 min&nbsp;·&nbsp;281 words&nbsp;·&nbsp;penspanic</footer>
-  <a class="entry-link" aria-label="post link to C# lock 에 대해" href="https://penspanic.github.io/posts/csharp/csharp-lock-implementation/"></a>
+  <footer class="entry-footer"><span title='2020-10-10 18:20:29 +0900 KST'>October 10, 2020</span>&nbsp;·&nbsp;2 min&nbsp;·&nbsp;277 words&nbsp;·&nbsp;penspanic</footer>
+  <a class="entry-link" aria-label="post link to C# lock의 내부 구현" href="https://penspanic.github.io/posts/csharp/csharp-lock-implementation/"></a>
 </article>
 
 <article class="post-entry tag-entry"> 
@@ -206,14 +206,15 @@ private void DoAdd(int value) { lock (_collection) { _collection.Add(value); } }
     </h2>
   </header>
   <div class="entry-content">
-    <p>프로젝트내 코드 생성 활용 근래엔 Code 생성을 적극적으로 활용하고 있다.
+    <p>근래엔 Code 생성을 적극적으로 활용하고 있다.
 반복 작업 최소화, 실수 방지 측면에서 효율적이라 생각한다.
 그 부분들에 대해 소개하려 한다.
 MessagePack Code Generation MessagePack은 AOT Code Generation을 지원한다.
 Unity에서 MessagePack을 사용하기 때문에 AOT로 직접 생성된 Formatter를 사용한 결과가 더 좋기 때문에 AOT Code Generation을 사용한다. (mobile platform에선 il emit을 허용하지 않음 Unity documentation)
-측정 결과가 다른 것을 경험하고 server에도 AOT 생성된 Formatter를 사용하는데.. 정확한 결과 비교는 해봐야 알 듯....</p>
+측정 결과가 다른 것을 경험하고 server에도 AOT 생성된 Formatter를 사용하는데.. 정확한 결과 비교는 해봐야 알 듯.
+기억에 남는건 기본 MessagePack 의 Serialize 결과와 AOT Generated Formatter를 사용했을 때 결과가 달랐다....</p>
   </div>
-  <footer class="entry-footer"><span title='2020-10-05 18:20:29 +0900 KST'>October 5, 2020</span>&nbsp;·&nbsp;3 min&nbsp;·&nbsp;532 words&nbsp;·&nbsp;penspanic</footer>
+  <footer class="entry-footer"><span title='2020-10-05 18:20:29 +0900 KST'>October 5, 2020</span>&nbsp;·&nbsp;3 min&nbsp;·&nbsp;528 words&nbsp;·&nbsp;penspanic</footer>
   <a class="entry-link" aria-label="post link to 개발중인 프로젝트 구성안 - 4" href="https://penspanic.github.io/posts/architecture/2020-10-in-dev-project-4/"></a>
 </article>
 
@@ -223,7 +224,7 @@ Unity에서 MessagePack을 사용하기 때문에 AOT로 직접 생성된 Format
     </h2>
   </header>
   <div class="entry-content">
-    <p>Library, Package 활용 세번째 포스트는 프로젝트에서 사용중인 Library와 Package들에 대해 소개하려 한다.
+    <p>세번째 포스트는 프로젝트에서 사용중인 Library와 Package들에 대해 소개하려 한다.
 MessagePack GitHub
 프로젝트 시작시 Serialization Library를 어떤 것을 사용할지 꽤 고민했었다.
 이전 프로젝트에선 client &lt;-&gt; server 통신시 Protobuf를 사용했었는데, 이게 꽤나 불편했었다. -_-
@@ -233,7 +234,7 @@ IDL을 수정하고, Compile하고, Compile된 결과물을 각각 project에 �
 Protobuf은 후보 선상에서 제외.
 또한 output에 meta-data 없이 payload 만 필요하기 때문에, 그 면에서도 MessagePack이 적합하다고 판단했다....</p>
   </div>
-  <footer class="entry-footer"><span title='2020-10-04 18:20:29 +0900 KST'>October 4, 2020</span>&nbsp;·&nbsp;3 min&nbsp;·&nbsp;487 words&nbsp;·&nbsp;penspanic</footer>
+  <footer class="entry-footer"><span title='2020-10-04 18:20:29 +0900 KST'>October 4, 2020</span>&nbsp;·&nbsp;3 min&nbsp;·&nbsp;484 words&nbsp;·&nbsp;penspanic</footer>
   <a class="entry-link" aria-label="post link to 개발중인 프로젝트 구성안 - 3" href="https://penspanic.github.io/posts/architecture/2020-10-in-dev-project-3/"></a>
 </article>
 
@@ -243,7 +244,7 @@ Protobuf은 후보 선상에서 제외.
     </h2>
   </header>
   <div class="entry-content">
-    <p>현재 개발중인 프로젝트의 구성에 대해 - 2 먼저, Repository에 대해.
+    <p>먼저, Repository에 대해.
 Repository client-dash 유니티 클라이언트 프로젝트
 Unity 2019.4x, .Net 4.x
 data-dash, lib-dash server-dash 로비서버, 매치서버, 인게임 서버등 서비스에 필요한 서버들의 모음
@@ -254,7 +255,7 @@ data-dash, lib-dash dummyclient-dash 더미 클라이언트. 인게임 전투, A
 .Net Core 3.x
 data-dash, lib-dash etc AWS Lambda 에서 실행되는 MicroService 등 눈치 채신 분들도 있겠지만, data-dash, lib-dash는 Submodule 이다....</p>
   </div>
-  <footer class="entry-footer"><span title='2020-10-02 18:20:29 +0900 KST'>October 2, 2020</span>&nbsp;·&nbsp;2 min&nbsp;·&nbsp;288 words&nbsp;·&nbsp;penspanic</footer>
+  <footer class="entry-footer"><span title='2020-10-02 18:20:29 +0900 KST'>October 2, 2020</span>&nbsp;·&nbsp;2 min&nbsp;·&nbsp;281 words&nbsp;·&nbsp;penspanic</footer>
   <a class="entry-link" aria-label="post link to 개발중인 프로젝트 구성안 - 2" href="https://penspanic.github.io/posts/architecture/2020-10-in-dev-project-2/"></a>
 </article>
 <footer class="page-footer">
