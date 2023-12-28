@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Keyboard on penspanic&#39;s Devlog</title>
+    <link>https://penspanic.github.io/tags/keyboard/</link>
+    <description>Recent content in Keyboard on penspanic&#39;s Devlog</description>
+    <image>
+      <title>penspanic&#39;s Devlog</title>
+      <url>https://penspanic.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>https://penspanic.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+    </image>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ko-kr</language>
+    <atom:link href="https://penspanic.github.io/tags/keyboard/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>나의 키보드 변천사</title>
+      <link>https://penspanic.github.io/posts/personal/my-keyboard-history/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://penspanic.github.io/posts/personal/my-keyboard-history/</guid>
+      <description>나의 키보드 변천사 짧은 시간안에 꽤 다양한 키보드를 경험했다.
+그 과정에 대한 기록을 남겨보려 한다.
+풀배열 키보드, 텐키리스 키보드, 65%, HHKB, 60%, 40% &amp;hellip;
+엄청나게 다양한 종류의 배열을 가진 키보드가 시중에 존재한다.
+여느 개발자가 그렇듯 나도 취업 직후엔 보편적인 텐키리스 키보드인 Realforce 87U를 사용했다.
+그러다 2년여전 Mac 세계로 넘어오면서 매직키보드를 사용하게 됐는데,
+이 것이 내가 처음 사용한 미니키보드라고 부를 수 있는 것이었다.
+이 키보드는 그 당시 사용하던 단축키 사용법을 뒤엎게 만들었다.</description>
+    </item>
+  </channel>
+</rss>

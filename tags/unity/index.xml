@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Unity on penspanic&#39;s Devlog</title>
+    <link>https://penspanic.github.io/tags/unity/</link>
+    <description>Recent content in Unity on penspanic&#39;s Devlog</description>
+    <image>
+      <title>penspanic&#39;s Devlog</title>
+      <url>https://penspanic.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>https://penspanic.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+    </image>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ko-kr</language>
+    <atom:link href="https://penspanic.github.io/tags/unity/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Unity - Assembly Definition</title>
+      <link>https://penspanic.github.io/posts/unity/about-assembly-definition/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://penspanic.github.io/posts/unity/about-assembly-definition/</guid>
+      <description>Unity - Assembly Definition 요약 Assembly를 나누어, 모듈별 의존성을 명확하게 관리하고, 컴파일 시간을 줄인다.
+내용 기본 Unity 컴파일 시스템은 2개의 Assembly를 만들어낸다.
+프로젝트 안 소스파일들이 기본적으로 Assembly-CSharp에 포함되고, &amp;ldquo;Editor&amp;rdquo; 란 이름의 Directory안의 소스파일들은 Assembly-Csharp-Editor에 포함된다.
+결국, 특정 소스코드를 1줄만 수정을 해도 그 소스코드가 포함된 어셈블리를 다시 컴파일 해야 한다. 이 과정에서 프로젝트가 커지고, 모듈이 많이 붙을 수록 컴파일 시간이 길어진다.
+이 문제를 해결할 수 있는 기능이 Unity 2018에 추가된 Assembly Definition 기능이다.</description>
+    </item>
+    <item>
+      <title>개발중인 프로젝트 구성안 - 2</title>
+      <link>https://penspanic.github.io/posts/architecture/2020-10-in-dev-project-2/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://penspanic.github.io/posts/architecture/2020-10-in-dev-project-2/</guid>
+      <description>현재 개발중인 프로젝트의 구성에 대해 - 2 먼저, Repository에 대해.
+Repository client-dash 유니티 클라이언트 프로젝트
+Unity 2019.4x, .Net 4.x
+data-dash, lib-dash server-dash 로비서버, 매치서버, 인게임 서버등 서비스에 필요한 서버들의 모음
+.Net Core 3.x
+data-dash, lib-dash admin-dash 관리자툴, 유저 및 게임 서비스에 대한 제어
+.Net Core 3.x
+data-dash, lib-dash dummyclient-dash 더미 클라이언트. 인게임 전투, API 요청, 특수한 시나리오등을 수행하는 클라이언트
+.Net Core 3.x
+data-dash, lib-dash etc AWS Lambda 에서 실행되는 MicroService 등 눈치 채신 분들도 있겠지만, data-dash, lib-dash는 Submodule 이다.</description>
+    </item>
+    <item>
+      <title>개발중인 프로젝트 구성안 - 3</title>
+      <link>https://penspanic.github.io/posts/architecture/2020-10-in-dev-project-3/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://penspanic.github.io/posts/architecture/2020-10-in-dev-project-3/</guid>
+      <description>Library, Package 활용 세번째 포스트는 프로젝트에서 사용중인 Library와 Package들에 대해 소개하려 한다.
+MessagePack GitHub
+프로젝트 시작시 Serialization Library를 어떤 것을 사용할지 꽤 고민했었다.
+이전 프로젝트에선 client &amp;lt;-&amp;gt; server 통신시 Protobuf를 사용했었는데, 이게 꽤나 불편했었다. -_-
+IDL을 수정하고, Compile하고, Compile된 결과물을 각각 project에 복사하고.
+(자동화 스크립트가 있다고 하더라도 꽤나 귀찮았다.)
+이번 프로젝트에선 모든 Language를 C#으로 통일했기에, IDL을 사용할 필요가 없어져서
+Protobuf은 후보 선상에서 제외.
+또한 output에 meta-data 없이 payload 만 필요하기 때문에, 그 면에서도 MessagePack이 적합하다고 판단했다.</description>
+    </item>
+  </channel>
+</rss>

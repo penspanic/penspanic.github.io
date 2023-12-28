@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Categories on penspanic&#39;s Devlog</title>
+    <link>https://penspanic.github.io/categories/</link>
+    <description>Recent content in Categories on penspanic&#39;s Devlog</description>
+    <image>
+      <title>penspanic&#39;s Devlog</title>
+      <url>https://penspanic.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>https://penspanic.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+    </image>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ko-kr</language>
+    <atom:link href="https://penspanic.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Architecture</title>
+      <link>https://penspanic.github.io/categories/architecture/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://penspanic.github.io/categories/architecture/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>CSharp</title>
+      <link>https://penspanic.github.io/categories/csharp/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://penspanic.github.io/categories/csharp/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Personal</title>
+      <link>https://penspanic.github.io/categories/personal/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://penspanic.github.io/categories/personal/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Unity</title>
+      <link>https://penspanic.github.io/categories/unity/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://penspanic.github.io/categories/unity/</guid>
+      <description></description>
+    </item>
+  </channel>
+</rss>

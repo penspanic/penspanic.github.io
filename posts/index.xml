@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on penspanic&#39;s Devlog</title>
+    <link>https://penspanic.github.io/posts/</link>
+    <description>Recent content in Posts on penspanic&#39;s Devlog</description>
+    <image>
+      <title>penspanic&#39;s Devlog</title>
+      <url>https://penspanic.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>https://penspanic.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+    </image>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ko-kr</language>
+    <atom:link href="https://penspanic.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>C# - Reflection에 대한 고찰</title>
+      <link>https://penspanic.github.io/posts/csharp/thoughts-about-csharp-reflection/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://penspanic.github.io/posts/csharp/thoughts-about-csharp-reflection/</guid>
+      <description>Reflection에 대한 고찰과 약간의 팁 C# 프로그래밍 씬에서 가장 흔한 오해중 하나는
+&amp;ldquo;Reflection은 느리니까 자제해야 한다.&amp;rdquo;
+라는 것.
+처음엔 그냥 그런가보다 했다. C#에 대한 이해도가 많이 부족했으니.
+하지만 필요에 의해 Reflection을 사용하게 됐고, 그것 없이 C# 프로그래밍을 하기에 불편함에 이르렀다.
+제대로 이해하고 적절히 사용해야 할 때가 온 것이다.
+깊게 파보고, 프로파일링 - 최적화 해보고. 그 과정들을 통해 지금은
+올바른 Reflection 사용은 현대적이고 발전된 코드를 작성할 수 있다.
+라고 생각하게 됐다.</description>
+    </item>
+    <item>
+      <title>C# 9.0 신기능 프리뷰</title>
+      <link>https://penspanic.github.io/posts/csharp/csharp-9-0-features-preview/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://penspanic.github.io/posts/csharp/csharp-9-0-features-preview/</guid>
+      <description>C# 9.0 써보기전 주관적 프리뷰 이번에 릴리즈된 C# 9.0의 기능을 살펴봤다.
+MS Docs 링크에 워낙 잘 설명돼있어서 기능에 대한 설명 자체는 자세히 다루지 않겠다.
+record type 새로운 Reference Type이 추가되었다.
+몰랐는데, class 만 reference type 인줄 알았는데 익명 타입도 reference type에 포함된다고 한다.
+어차피 C# 컴파일러가 익명 타입을 class로 변환할 것 같지만..
+역시 그렇다. 내부적으론 Tuple&amp;lt;,&amp;gt; 등과 비슷하게 구현됐다고 보면 될 것 같음.
+내가 생각하는 도입 사유 기존의 class(reference type)으로 immutable type을 구현하기 좀 까다로웠다.</description>
+    </item>
+    <item>
+      <title>C# lock 에 대해</title>
+      <link>https://penspanic.github.io/posts/csharp/csharp-lock-implementation/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://penspanic.github.io/posts/csharp/csharp-lock-implementation/</guid>
+      <description>lock 내부 구현, 키워드 C# 프로그래밍을 하다보면 자연스레 멀티쓰레딩 환경에서 자원 획득 제한이 필요한 경우 lock을 사용했었다.
+이 lock 키워드 및 블럭을 사용했을 때 내부적으로 어떻게 동작되는지 궁금해서 알아보았다.
+lock 문 lock statement(lock 문) Microsoft Docs
+lock은 공식 문서에 문이라고 한다.
+Language Reference Statement Keywords lock Statement 위와 같은 구조로 Document에 구성되어 있다.
+이 것의 동작 방식을 까보려면 역시 Decompile.
+private void DoAdd(int value) { lock (_collection) { _collection.Add(value); } } 위 코드를 Decompile시 아래의 il로 해석된다.</description>
+    </item>
+    <item>
+      <title>CSharp-Lambda</title>
+      <link>https://penspanic.github.io/posts/csharp/csharp-lambda/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://penspanic.github.io/posts/csharp/csharp-lambda/</guid>
+      <description>C# 람다의 내부 구현에 대해 마법은 없다. Lambda를 컴파일러가 어떤식으로 구현하는지 알아둘 필요가 있다. public static class LambdaExample { public static void Run() { int localInt = 123456789; string localString = &amp;#34;LocalString&amp;#34;; ActionRunner(() =&amp;gt; { Console.WriteLine($&amp;#34;{localInt}, {localString}&amp;#34;); }); } private static void ActionRunner(Action action) { action?.Invoke(); } } 위의 코드는 아래와 같이 해석될 수 있다.
+public static class LambdaExampleTranslated { public class LambdaClass { public int localInt; public string localString; public void Run() { Console.</description>
+    </item>
+    <item>
+      <title>csharp-unmanaged memory</title>
+      <link>https://penspanic.github.io/posts/csharp/csharp-unmanaged-memory/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://penspanic.github.io/posts/csharp/csharp-unmanaged-memory/</guid>
+      <description>Managed / Unmanaged Memory Managed Memory CLR(Common Language Runtime)이 관리하는 메모리. Garbage Collection의 대상이 된다.
+Unmanaged Memory Managed Memory가 아닌 것.
+C# 에서도 C++ 에서처럼 직접 메모리를 할당 할 수 있다.
+IntPtr memory = Marshal.AllocHGlobal(100); for (int i = 0; i &amp;lt; 100; ++i) { ((byte*) memory)[i] = (byte)(i + 1); } Marshal.FreeHGlobal(memory); stackalloc 표현식 Stack 에 메모리가 할당됨. 그 Stack을 벗어날 때 자동으로 메모리 해제.
+일시적인 계산을 위한 메모리를 사용할 때, stackalloc을 사용함으로써 Managed Heap에 할당되지 않게 하여 최적화 가능.</description>
+    </item>
+    <item>
+      <title>Unity - Assembly Definition</title>
+      <link>https://penspanic.github.io/posts/unity/about-assembly-definition/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://penspanic.github.io/posts/unity/about-assembly-definition/</guid>
+      <description>Unity - Assembly Definition 요약 Assembly를 나누어, 모듈별 의존성을 명확하게 관리하고, 컴파일 시간을 줄인다.
+내용 기본 Unity 컴파일 시스템은 2개의 Assembly를 만들어낸다.
+프로젝트 안 소스파일들이 기본적으로 Assembly-CSharp에 포함되고, &amp;ldquo;Editor&amp;rdquo; 란 이름의 Directory안의 소스파일들은 Assembly-Csharp-Editor에 포함된다.
+결국, 특정 소스코드를 1줄만 수정을 해도 그 소스코드가 포함된 어셈블리를 다시 컴파일 해야 한다. 이 과정에서 프로젝트가 커지고, 모듈이 많이 붙을 수록 컴파일 시간이 길어진다.
+이 문제를 해결할 수 있는 기능이 Unity 2018에 추가된 Assembly Definition 기능이다.</description>
+    </item>
+    <item>
+      <title>개발중인 프로젝트 구성안 - 1</title>
+      <link>https://penspanic.github.io/posts/architecture/2020-10-in-dev-project-1/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://penspanic.github.io/posts/architecture/2020-10-in-dev-project-1/</guid>
+      <description>현재 개발중인 프로젝트의 구성에 대해 - 1 이번 프로젝트 리드를 하며 아키텍쳐를 잡을 때 최우선 사항은
+생산성 이었다.
+대형 프로젝트도 아니고, 소수의 프로그래머가 지속적으로 바뀌는 요구 사항과
+짧은 일정을 소화하려면 생산성이 가장 중요하다고 생각했다.
+유려한 아키텍쳐 및 프로젝트 구성 샐틈없는 강력한 보안의 코드 / 동기화 모델 엄청난 Throughput을 보여주는 고성능 프로그램 을 다 충족시키며 우리 팀의 목적 달성은 현실적으로 어렵다고 판단했다.
+결국 선택과 집중이 필요한 부분인데..
+게임 개발 경력이 아직 길진 않지만,</description>
+    </item>
+    <item>
+      <title>개발중인 프로젝트 구성안 - 2</title>
+      <link>https://penspanic.github.io/posts/architecture/2020-10-in-dev-project-2/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://penspanic.github.io/posts/architecture/2020-10-in-dev-project-2/</guid>
+      <description>현재 개발중인 프로젝트의 구성에 대해 - 2 먼저, Repository에 대해.
+Repository client-dash 유니티 클라이언트 프로젝트
+Unity 2019.4x, .Net 4.x
+data-dash, lib-dash server-dash 로비서버, 매치서버, 인게임 서버등 서비스에 필요한 서버들의 모음
+.Net Core 3.x
+data-dash, lib-dash admin-dash 관리자툴, 유저 및 게임 서비스에 대한 제어
+.Net Core 3.x
+data-dash, lib-dash dummyclient-dash 더미 클라이언트. 인게임 전투, API 요청, 특수한 시나리오등을 수행하는 클라이언트
+.Net Core 3.x
+data-dash, lib-dash etc AWS Lambda 에서 실행되는 MicroService 등 눈치 채신 분들도 있겠지만, data-dash, lib-dash는 Submodule 이다.</description>
+    </item>
+    <item>
+      <title>개발중인 프로젝트 구성안 - 3</title>
+      <link>https://penspanic.github.io/posts/architecture/2020-10-in-dev-project-3/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://penspanic.github.io/posts/architecture/2020-10-in-dev-project-3/</guid>
+      <description>Library, Package 활용 세번째 포스트는 프로젝트에서 사용중인 Library와 Package들에 대해 소개하려 한다.
+MessagePack GitHub
+프로젝트 시작시 Serialization Library를 어떤 것을 사용할지 꽤 고민했었다.
+이전 프로젝트에선 client &amp;lt;-&amp;gt; server 통신시 Protobuf를 사용했었는데, 이게 꽤나 불편했었다. -_-
+IDL을 수정하고, Compile하고, Compile된 결과물을 각각 project에 복사하고.
+(자동화 스크립트가 있다고 하더라도 꽤나 귀찮았다.)
+이번 프로젝트에선 모든 Language를 C#으로 통일했기에, IDL을 사용할 필요가 없어져서
+Protobuf은 후보 선상에서 제외.
+또한 output에 meta-data 없이 payload 만 필요하기 때문에, 그 면에서도 MessagePack이 적합하다고 판단했다.</description>
+    </item>
+    <item>
+      <title>개발중인 프로젝트 구성안 - 4</title>
+      <link>https://penspanic.github.io/posts/architecture/2020-10-in-dev-project-4/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://penspanic.github.io/posts/architecture/2020-10-in-dev-project-4/</guid>
+      <description>프로젝트내 코드 생성 활용 근래엔 Code 생성을 적극적으로 활용하고 있다.
+반복 작업 최소화, 실수 방지 측면에서 효율적이라 생각한다.
+그 부분들에 대해 소개하려 한다.
+MessagePack Code Generation MessagePack은 AOT Code Generation을 지원한다.
+Unity에서 MessagePack을 사용하기 때문에 AOT로 직접 생성된 Formatter를 사용한 결과가 더 좋기 때문에 AOT Code Generation을 사용한다. (mobile platform에선 il emit을 허용하지 않음 Unity documentation)
+측정 결과가 다른 것을 경험하고 server에도 AOT 생성된 Formatter를 사용하는데.. 정확한 결과 비교는 해봐야 알 듯.</description>
+    </item>
+    <item>
+      <title>나의 키보드 변천사</title>
+      <link>https://penspanic.github.io/posts/personal/my-keyboard-history/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://penspanic.github.io/posts/personal/my-keyboard-history/</guid>
+      <description>나의 키보드 변천사 짧은 시간안에 꽤 다양한 키보드를 경험했다.
+그 과정에 대한 기록을 남겨보려 한다.
+풀배열 키보드, 텐키리스 키보드, 65%, HHKB, 60%, 40% &amp;hellip;
+엄청나게 다양한 종류의 배열을 가진 키보드가 시중에 존재한다.
+여느 개발자가 그렇듯 나도 취업 직후엔 보편적인 텐키리스 키보드인 Realforce 87U를 사용했다.
+그러다 2년여전 Mac 세계로 넘어오면서 매직키보드를 사용하게 됐는데,
+이 것이 내가 처음 사용한 미니키보드라고 부를 수 있는 것이었다.
+이 키보드는 그 당시 사용하던 단축키 사용법을 뒤엎게 만들었다.</description>
+    </item>
+  </channel>
+</rss>
