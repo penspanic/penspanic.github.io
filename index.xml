@@ -11,8 +11,17 @@
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-kr</language>
-    <lastBuildDate>Mon, 07 Dec 2020 18:20:29 +0900</lastBuildDate>
+    <lastBuildDate>Thu, 28 Dec 2023 19:15:51 +0900</lastBuildDate>
     <atom:link href="https://penspanic.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>OpenCVSharp Frame Buffer Pooling</title>
+      <link>https://penspanic.github.io/posts/csharp/opencvsharpbufferpooling/</link>
+      <pubDate>Thu, 28 Dec 2023 19:15:51 +0900</pubDate>
+      <guid>https://penspanic.github.io/posts/csharp/opencvsharpbufferpooling/</guid>
+      <description>OpenCVSharp을 사용해 비디오의 매 프레임을 가져오는 기능을 개발했다.
+private static void ReadEachFrame_Normal() { string path = &amp;#34;path/top/your/video.mp4&amp;#34;; VideoCapture capture = new VideoCapture(path); capture.Open(path); using Mat frame = new Mat(); while (capture.Read(frame)) { byte[] bytes = frame.ToBytes(); } } 동시에 여러 비디오의 프레임을 가져오다보니 byte[]의 할당과 버려짐이 상당했다. 그로 인해 GC 압력이 증가하고, 잦은 GC Collect가 일어날 것이 자명했다.
+OpenCVSharp 라이브러리에는 내가 아는한 쉽게 프레임 버퍼를 C# 객체로 가져올 수 있는 방법이 없다.</description>
+    </item>
     <item>
       <title>C# 9.0 신기능 프리뷰</title>
       <link>https://penspanic.github.io/posts/csharp/csharp-9-0-features-preview/</link>

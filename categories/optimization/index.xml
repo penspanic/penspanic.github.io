@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Optimization on penspanic&#39;s Devlog</title>
+    <link>https://penspanic.github.io/categories/optimization/</link>
+    <description>Recent content in Optimization on penspanic&#39;s Devlog</description>
+    <image>
+      <title>penspanic&#39;s Devlog</title>
+      <url>https://penspanic.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>https://penspanic.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+    </image>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ko-kr</language>
+    <lastBuildDate>Thu, 28 Dec 2023 19:15:51 +0900</lastBuildDate>
+    <atom:link href="https://penspanic.github.io/categories/optimization/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>OpenCVSharp Frame Buffer Pooling</title>
+      <link>https://penspanic.github.io/posts/csharp/opencvsharpbufferpooling/</link>
+      <pubDate>Thu, 28 Dec 2023 19:15:51 +0900</pubDate>
+      <guid>https://penspanic.github.io/posts/csharp/opencvsharpbufferpooling/</guid>
+      <description>OpenCVSharp을 사용해 비디오의 매 프레임을 가져오는 기능을 개발했다.
+private static void ReadEachFrame_Normal() { string path = &amp;#34;path/top/your/video.mp4&amp;#34;; VideoCapture capture = new VideoCapture(path); capture.Open(path); using Mat frame = new Mat(); while (capture.Read(frame)) { byte[] bytes = frame.ToBytes(); } } 동시에 여러 비디오의 프레임을 가져오다보니 byte[]의 할당과 버려짐이 상당했다. 그로 인해 GC 압력이 증가하고, 잦은 GC Collect가 일어날 것이 자명했다.
+OpenCVSharp 라이브러리에는 내가 아는한 쉽게 프레임 버퍼를 C# 객체로 가져올 수 있는 방법이 없다.</description>
+    </item>
+  </channel>
+</rss>
