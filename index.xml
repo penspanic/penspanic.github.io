@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>penspanic&#39;s Devlog</title>
     <link>https://penspanic.github.io/</link>
@@ -10,12 +10,12 @@
       <link>https://penspanic.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
-    <language>ko-kr</language>
-    <atom:link href="https://penspanic.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <language>ko-kr</language><atom:link href="https://penspanic.github.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>C# - Reflection에 대한 고찰</title>
       <link>https://penspanic.github.io/posts/csharp/thoughts-about-csharp-reflection/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
       <guid>https://penspanic.github.io/posts/csharp/thoughts-about-csharp-reflection/</guid>
       <description>Reflection에 대한 고찰과 약간의 팁 C# 프로그래밍 씬에서 가장 흔한 오해중 하나는
 &amp;ldquo;Reflection은 느리니까 자제해야 한다.&amp;rdquo;
@@ -27,10 +27,12 @@
 올바른 Reflection 사용은 현대적이고 발전된 코드를 작성할 수 있다.
 라고 생각하게 됐다.</description>
     </item>
+    
     <item>
       <title>C# 9.0 신기능 프리뷰</title>
       <link>https://penspanic.github.io/posts/csharp/csharp-9-0-features-preview/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
       <guid>https://penspanic.github.io/posts/csharp/csharp-9-0-features-preview/</guid>
       <description>C# 9.0 써보기전 주관적 프리뷰 이번에 릴리즈된 C# 9.0의 기능을 살펴봤다.
 MS Docs 링크에 워낙 잘 설명돼있어서 기능에 대한 설명 자체는 자세히 다루지 않겠다.
@@ -40,10 +42,12 @@ record type 새로운 Reference Type이 추가되었다.
 역시 그렇다. 내부적으론 Tuple&amp;lt;,&amp;gt; 등과 비슷하게 구현됐다고 보면 될 것 같음.
 내가 생각하는 도입 사유 기존의 class(reference type)으로 immutable type을 구현하기 좀 까다로웠다.</description>
     </item>
+    
     <item>
       <title>C# lock 에 대해</title>
       <link>https://penspanic.github.io/posts/csharp/csharp-lock-implementation/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
       <guid>https://penspanic.github.io/posts/csharp/csharp-lock-implementation/</guid>
       <description>lock 내부 구현, 키워드 C# 프로그래밍을 하다보면 자연스레 멀티쓰레딩 환경에서 자원 획득 제한이 필요한 경우 lock을 사용했었다.
 이 lock 키워드 및 블럭을 사용했을 때 내부적으로 어떻게 동작되는지 궁금해서 알아보았다.
@@ -53,18 +57,22 @@ Language Reference Statement Keywords lock Statement 위와 같은 구조로 Doc
 이 것의 동작 방식을 까보려면 역시 Decompile.
 private void DoAdd(int value) { lock (_collection) { _collection.Add(value); } } 위 코드를 Decompile시 아래의 il로 해석된다.</description>
     </item>
+    
     <item>
       <title>CSharp-Lambda</title>
       <link>https://penspanic.github.io/posts/csharp/csharp-lambda/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
       <guid>https://penspanic.github.io/posts/csharp/csharp-lambda/</guid>
       <description>C# 람다의 내부 구현에 대해 마법은 없다. Lambda를 컴파일러가 어떤식으로 구현하는지 알아둘 필요가 있다. public static class LambdaExample { public static void Run() { int localInt = 123456789; string localString = &amp;#34;LocalString&amp;#34;; ActionRunner(() =&amp;gt; { Console.WriteLine($&amp;#34;{localInt}, {localString}&amp;#34;); }); } private static void ActionRunner(Action action) { action?.Invoke(); } } 위의 코드는 아래와 같이 해석될 수 있다.
 public static class LambdaExampleTranslated { public class LambdaClass { public int localInt; public string localString; public void Run() { Console.</description>
     </item>
+    
     <item>
       <title>csharp-unmanaged memory</title>
       <link>https://penspanic.github.io/posts/csharp/csharp-unmanaged-memory/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
       <guid>https://penspanic.github.io/posts/csharp/csharp-unmanaged-memory/</guid>
       <description>Managed / Unmanaged Memory Managed Memory CLR(Common Language Runtime)이 관리하는 메모리. Garbage Collection의 대상이 된다.
 Unmanaged Memory Managed Memory가 아닌 것.
@@ -72,10 +80,12 @@ C# 에서도 C++ 에서처럼 직접 메모리를 할당 할 수 있다.
 IntPtr memory = Marshal.AllocHGlobal(100); for (int i = 0; i &amp;lt; 100; ++i) { ((byte*) memory)[i] = (byte)(i + 1); } Marshal.FreeHGlobal(memory); stackalloc 표현식 Stack 에 메모리가 할당됨. 그 Stack을 벗어날 때 자동으로 메모리 해제.
 일시적인 계산을 위한 메모리를 사용할 때, stackalloc을 사용함으로써 Managed Heap에 할당되지 않게 하여 최적화 가능.</description>
     </item>
+    
     <item>
       <title>Unity - Assembly Definition</title>
       <link>https://penspanic.github.io/posts/unity/about-assembly-definition/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
       <guid>https://penspanic.github.io/posts/unity/about-assembly-definition/</guid>
       <description>Unity - Assembly Definition 요약 Assembly를 나누어, 모듈별 의존성을 명확하게 관리하고, 컴파일 시간을 줄인다.
 내용 기본 Unity 컴파일 시스템은 2개의 Assembly를 만들어낸다.
@@ -83,10 +93,12 @@ IntPtr memory = Marshal.AllocHGlobal(100); for (int i = 0; i &amp;lt; 100; ++i) 
 결국, 특정 소스코드를 1줄만 수정을 해도 그 소스코드가 포함된 어셈블리를 다시 컴파일 해야 한다. 이 과정에서 프로젝트가 커지고, 모듈이 많이 붙을 수록 컴파일 시간이 길어진다.
 이 문제를 해결할 수 있는 기능이 Unity 2018에 추가된 Assembly Definition 기능이다.</description>
     </item>
+    
     <item>
       <title>개발중인 프로젝트 구성안 - 1</title>
       <link>https://penspanic.github.io/posts/architecture/2020-10-in-dev-project-1/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
       <guid>https://penspanic.github.io/posts/architecture/2020-10-in-dev-project-1/</guid>
       <description>현재 개발중인 프로젝트의 구성에 대해 - 1 이번 프로젝트 리드를 하며 아키텍쳐를 잡을 때 최우선 사항은
 생산성 이었다.
@@ -96,10 +108,12 @@ IntPtr memory = Marshal.AllocHGlobal(100); for (int i = 0; i &amp;lt; 100; ++i) 
 결국 선택과 집중이 필요한 부분인데..
 게임 개발 경력이 아직 길진 않지만,</description>
     </item>
+    
     <item>
       <title>개발중인 프로젝트 구성안 - 2</title>
       <link>https://penspanic.github.io/posts/architecture/2020-10-in-dev-project-2/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
       <guid>https://penspanic.github.io/posts/architecture/2020-10-in-dev-project-2/</guid>
       <description>현재 개발중인 프로젝트의 구성에 대해 - 2 먼저, Repository에 대해.
 Repository client-dash 유니티 클라이언트 프로젝트
@@ -112,10 +126,12 @@ data-dash, lib-dash dummyclient-dash 더미 클라이언트. 인게임 전투, A
 .Net Core 3.x
 data-dash, lib-dash etc AWS Lambda 에서 실행되는 MicroService 등 눈치 채신 분들도 있겠지만, data-dash, lib-dash는 Submodule 이다.</description>
     </item>
+    
     <item>
       <title>개발중인 프로젝트 구성안 - 3</title>
       <link>https://penspanic.github.io/posts/architecture/2020-10-in-dev-project-3/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
       <guid>https://penspanic.github.io/posts/architecture/2020-10-in-dev-project-3/</guid>
       <description>Library, Package 활용 세번째 포스트는 프로젝트에서 사용중인 Library와 Package들에 대해 소개하려 한다.
 MessagePack GitHub
@@ -127,10 +143,12 @@ IDL을 수정하고, Compile하고, Compile된 결과물을 각각 project에 �
 Protobuf은 후보 선상에서 제외.
 또한 output에 meta-data 없이 payload 만 필요하기 때문에, 그 면에서도 MessagePack이 적합하다고 판단했다.</description>
     </item>
+    
     <item>
       <title>개발중인 프로젝트 구성안 - 4</title>
       <link>https://penspanic.github.io/posts/architecture/2020-10-in-dev-project-4/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
       <guid>https://penspanic.github.io/posts/architecture/2020-10-in-dev-project-4/</guid>
       <description>프로젝트내 코드 생성 활용 근래엔 Code 생성을 적극적으로 활용하고 있다.
 반복 작업 최소화, 실수 방지 측면에서 효율적이라 생각한다.
@@ -139,10 +157,12 @@ MessagePack Code Generation MessagePack은 AOT Code Generation을 지원한다.
 Unity에서 MessagePack을 사용하기 때문에 AOT로 직접 생성된 Formatter를 사용한 결과가 더 좋기 때문에 AOT Code Generation을 사용한다. (mobile platform에선 il emit을 허용하지 않음 Unity documentation)
 측정 결과가 다른 것을 경험하고 server에도 AOT 생성된 Formatter를 사용하는데.. 정확한 결과 비교는 해봐야 알 듯.</description>
     </item>
+    
     <item>
       <title>나의 키보드 변천사</title>
       <link>https://penspanic.github.io/posts/personal/my-keyboard-history/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
       <guid>https://penspanic.github.io/posts/personal/my-keyboard-history/</guid>
       <description>나의 키보드 변천사 짧은 시간안에 꽤 다양한 키보드를 경험했다.
 그 과정에 대한 기록을 남겨보려 한다.
@@ -153,5 +173,6 @@ Unity에서 MessagePack을 사용하기 때문에 AOT로 직접 생성된 Format
 이 것이 내가 처음 사용한 미니키보드라고 부를 수 있는 것이었다.
 이 키보드는 그 당시 사용하던 단축키 사용법을 뒤엎게 만들었다.</description>
     </item>
+    
   </channel>
 </rss>

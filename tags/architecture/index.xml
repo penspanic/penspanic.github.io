@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Architecture on penspanic&#39;s Devlog</title>
     <link>https://penspanic.github.io/tags/architecture/</link>
@@ -10,12 +10,12 @@
       <link>https://penspanic.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
-    <language>ko-kr</language>
-    <atom:link href="https://penspanic.github.io/tags/architecture/index.xml" rel="self" type="application/rss+xml" />
+    <language>ko-kr</language><atom:link href="https://penspanic.github.io/tags/architecture/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>개발중인 프로젝트 구성안 - 1</title>
       <link>https://penspanic.github.io/posts/architecture/2020-10-in-dev-project-1/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
       <guid>https://penspanic.github.io/posts/architecture/2020-10-in-dev-project-1/</guid>
       <description>현재 개발중인 프로젝트의 구성에 대해 - 1 이번 프로젝트 리드를 하며 아키텍쳐를 잡을 때 최우선 사항은
 생산성 이었다.
@@ -25,10 +25,12 @@
 결국 선택과 집중이 필요한 부분인데..
 게임 개발 경력이 아직 길진 않지만,</description>
     </item>
+    
     <item>
       <title>개발중인 프로젝트 구성안 - 2</title>
       <link>https://penspanic.github.io/posts/architecture/2020-10-in-dev-project-2/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
       <guid>https://penspanic.github.io/posts/architecture/2020-10-in-dev-project-2/</guid>
       <description>현재 개발중인 프로젝트의 구성에 대해 - 2 먼저, Repository에 대해.
 Repository client-dash 유니티 클라이언트 프로젝트
@@ -41,10 +43,12 @@ data-dash, lib-dash dummyclient-dash 더미 클라이언트. 인게임 전투, A
 .Net Core 3.x
 data-dash, lib-dash etc AWS Lambda 에서 실행되는 MicroService 등 눈치 채신 분들도 있겠지만, data-dash, lib-dash는 Submodule 이다.</description>
     </item>
+    
     <item>
       <title>개발중인 프로젝트 구성안 - 3</title>
       <link>https://penspanic.github.io/posts/architecture/2020-10-in-dev-project-3/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
       <guid>https://penspanic.github.io/posts/architecture/2020-10-in-dev-project-3/</guid>
       <description>Library, Package 활용 세번째 포스트는 프로젝트에서 사용중인 Library와 Package들에 대해 소개하려 한다.
 MessagePack GitHub
@@ -56,10 +60,12 @@ IDL을 수정하고, Compile하고, Compile된 결과물을 각각 project에 �
 Protobuf은 후보 선상에서 제외.
 또한 output에 meta-data 없이 payload 만 필요하기 때문에, 그 면에서도 MessagePack이 적합하다고 판단했다.</description>
     </item>
+    
     <item>
       <title>개발중인 프로젝트 구성안 - 4</title>
       <link>https://penspanic.github.io/posts/architecture/2020-10-in-dev-project-4/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
       <guid>https://penspanic.github.io/posts/architecture/2020-10-in-dev-project-4/</guid>
       <description>프로젝트내 코드 생성 활용 근래엔 Code 생성을 적극적으로 활용하고 있다.
 반복 작업 최소화, 실수 방지 측면에서 효율적이라 생각한다.
@@ -68,5 +74,6 @@ MessagePack Code Generation MessagePack은 AOT Code Generation을 지원한다.
 Unity에서 MessagePack을 사용하기 때문에 AOT로 직접 생성된 Formatter를 사용한 결과가 더 좋기 때문에 AOT Code Generation을 사용한다. (mobile platform에선 il emit을 허용하지 않음 Unity documentation)
 측정 결과가 다른 것을 경험하고 server에도 AOT 생성된 Formatter를 사용하는데.. 정확한 결과 비교는 해봐야 알 듯.</description>
     </item>
+    
   </channel>
 </rss>

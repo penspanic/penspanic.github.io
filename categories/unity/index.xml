@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Unity on penspanic&#39;s Devlog</title>
     <link>https://penspanic.github.io/categories/unity/</link>
@@ -10,12 +10,12 @@
       <link>https://penspanic.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
-    <language>ko-kr</language>
-    <atom:link href="https://penspanic.github.io/categories/unity/index.xml" rel="self" type="application/rss+xml" />
+    <language>ko-kr</language><atom:link href="https://penspanic.github.io/categories/unity/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Unity - Assembly Definition</title>
       <link>https://penspanic.github.io/posts/unity/about-assembly-definition/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
       <guid>https://penspanic.github.io/posts/unity/about-assembly-definition/</guid>
       <description>Unity - Assembly Definition 요약 Assembly를 나누어, 모듈별 의존성을 명확하게 관리하고, 컴파일 시간을 줄인다.
 내용 기본 Unity 컴파일 시스템은 2개의 Assembly를 만들어낸다.
@@ -23,5 +23,6 @@
 결국, 특정 소스코드를 1줄만 수정을 해도 그 소스코드가 포함된 어셈블리를 다시 컴파일 해야 한다. 이 과정에서 프로젝트가 커지고, 모듈이 많이 붙을 수록 컴파일 시간이 길어진다.
 이 문제를 해결할 수 있는 기능이 Unity 2018에 추가된 Assembly Definition 기능이다.</description>
     </item>
+    
   </channel>
 </rss>
