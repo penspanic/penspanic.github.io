@@ -11,8 +11,23 @@
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-kr</language>
-    <lastBuildDate>Thu, 28 Dec 2023 19:15:51 +0900</lastBuildDate>
+    <lastBuildDate>Tue, 02 Jan 2024 23:01:50 +0900</lastBuildDate>
     <atom:link href="https://penspanic.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Happy Hacking Studio Review</title>
+      <link>https://penspanic.github.io/posts/personal/hhkb_studio_review/</link>
+      <pubDate>Tue, 02 Jan 2024 23:01:50 +0900</pubDate>
+      <guid>https://penspanic.github.io/posts/personal/hhkb_studio_review/</guid>
+      <description>인트로 난 해피해킹 추종자다.
+몇년전 오른 손목 통증으로 더 작은 키보드를 찾다가
+65% &amp;ndash;&amp;gt; 60% &amp;ndash;&amp;gt; HHKB로 정착하게 되었다.
+HHKB Hybrid Type S가 출시되자 말자 거의 바로 사서 3년 반 가량 사용했는데,
+얼마전 HHKB Studio라는 충격적인 모델이 출시한 것이다.
+&amp;lt;충격 포인트&amp;gt;
+무접점 X, 기계식 그럼에도 비싼 가격(40만원이상, 관세 포함 구매대행가 50만원..) 빨콩같은 것 탑재(Pointing Stick) 제스쳐 패드(?!) 조금 고민하다가..
+물론 어떻게 구매할지, 흰색나올 때 까지 기다릴지를 고민하다가,
+네이버 쇼핑 구매대행을 통해 구매했다.</description>
+    </item>
     <item>
       <title>OpenCVSharp Frame Buffer Pooling</title>
       <link>https://penspanic.github.io/posts/csharp/opencvsharpbufferpooling/</link>
@@ -137,8 +152,7 @@ IntPtr memory = Marshal.AllocHGlobal(100); for (int i = 0; i &amp;lt; 100; ++i) 
       <link>https://penspanic.github.io/posts/csharp/csharp-lambda/</link>
       <pubDate>Sun, 20 Sep 2020 18:20:29 +0900</pubDate>
       <guid>https://penspanic.github.io/posts/csharp/csharp-lambda/</guid>
-      <description>마법은 없다. Lambda를 컴파일러가 어떤식으로 구현하는지 알아둘 필요가 있다. public static class LambdaExample { public static void Run() { int localInt = 123456789; string localString = &amp;#34;LocalString&amp;#34;; ActionRunner(() =&amp;gt; { Console.WriteLine($&amp;#34;{localInt}, {localString}&amp;#34;); }); } private static void ActionRunner(Action action) { action?.Invoke(); } } 위의 코드는 아래와 같이 해석될 수 있다.
-public static class LambdaExampleTranslated { public class LambdaClass { public int localInt; public string localString; public void Run() { Console.WriteLine($&amp;#34;{localInt}, {localString}&amp;#34;); } } public static void Run() { int localInt = 123456789; string localString = &amp;#34;LocalString&amp;#34;; ActionRunner(new LambdaClass { localInt = localInt, localString = localString } .</description>
+      <description>마법은 없다. Lambda를 컴파일러가 어떤식으로 구현하는지 알아둘 필요가 있다. public static class LambdaExample { public static void Run() { int localInt = 123456789; string localString = &amp;#34;LocalString&amp;#34;; ActionRunner(() =&amp;gt; { Console.WriteLine($&amp;#34;{localInt}, {localString}&amp;#34;); }); } private static void ActionRunner(Action action) { action?.Invoke(); } } Decompiled il source// Type: CSharpExamples.LambdaExample // Assembly: CSharpExamples, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null// MVID: B420F7F8-9269-4798-8719-2A8ECDC7FBCA// Location: /Users/geunheepark/Projects/private/CSharpExamples/CSharpExamples/bin/Debug/netcoreapp3.1/CSharpExamples.dll// Sequence point data from /Users/geunheepark/Projects/private/CSharpExamples/CSharpExamples/bin/Debug/netcoreapp3.1/CSharpExamples.pdb.class public abstract sealed auto ansi beforefieldinitCSharpExamples.</description>
     </item>
     <item>
       <title>Unity - Assembly Definition</title>

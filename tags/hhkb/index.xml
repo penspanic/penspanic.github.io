@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Personal on penspanic&#39;s Devlog</title>
-    <link>https://penspanic.github.io/categories/personal/</link>
-    <description>Recent content in Personal on penspanic&#39;s Devlog</description>
+    <title>hhkb on penspanic&#39;s Devlog</title>
+    <link>https://penspanic.github.io/tags/hhkb/</link>
+    <description>Recent content in hhkb on penspanic&#39;s Devlog</description>
     <image>
       <title>penspanic&#39;s Devlog</title>
       <url>https://penspanic.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
@@ -12,7 +12,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-kr</language>
     <lastBuildDate>Tue, 02 Jan 2024 23:01:50 +0900</lastBuildDate>
-    <atom:link href="https://penspanic.github.io/categories/personal/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://penspanic.github.io/tags/hhkb/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Happy Hacking Studio Review</title>
       <link>https://penspanic.github.io/posts/personal/hhkb_studio_review/</link>
@@ -27,21 +27,6 @@ HHKB Hybrid Type S가 출시되자 말자 거의 바로 사서 3년 반 가량 �
 무접점 X, 기계식 그럼에도 비싼 가격(40만원이상, 관세 포함 구매대행가 50만원..) 빨콩같은 것 탑재(Pointing Stick) 제스쳐 패드(?!) 조금 고민하다가..
 물론 어떻게 구매할지, 흰색나올 때 까지 기다릴지를 고민하다가,
 네이버 쇼핑 구매대행을 통해 구매했다.</description>
-    </item>
-    <item>
-      <title>나의 키보드 변천사</title>
-      <link>https://penspanic.github.io/posts/personal/my-keyboard-history/</link>
-      <pubDate>Fri, 11 Sep 2020 18:20:29 +0900</pubDate>
-      <guid>https://penspanic.github.io/posts/personal/my-keyboard-history/</guid>
-      <description>짧은 시간안에 꽤 다양한 키보드를 경험했다.
-그 과정에 대한 기록을 남겨보려 한다.
-풀배열 키보드, 텐키리스 키보드, 65%, HHKB, 60%, 40% &amp;hellip;
-엄청나게 다양한 종류의 배열을 가진 키보드가 시중에 존재한다.
-여느 개발자가 그렇듯 나도 취업 직후엔 보편적인 텐키리스 키보드인 Realforce 87U를 사용했다.
-그러다 2년여전 Mac 세계로 넘어오면서 매직키보드를 사용하게 됐는데,
-이 것이 내가 처음 사용한 미니키보드라고 부를 수 있는 것이었다.
-이 키보드는 그 당시 사용하던 단축키 사용법을 뒤엎게 만들었다.
-코딩시 자주 사용하는 PgUp/PgDn, Home/End 를 사용하려면 fn + 방향키를 사용해야 했고,</description>
     </item>
   </channel>
 </rss>

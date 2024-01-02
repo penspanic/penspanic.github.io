@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Keyboard on penspanic&#39;s Devlog</title>
+    <title>keyboard on penspanic&#39;s Devlog</title>
     <link>https://penspanic.github.io/tags/keyboard/</link>
-    <description>Recent content in Keyboard on penspanic&#39;s Devlog</description>
+    <description>Recent content in keyboard on penspanic&#39;s Devlog</description>
     <image>
       <title>penspanic&#39;s Devlog</title>
       <url>https://penspanic.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
@@ -11,8 +11,23 @@
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-kr</language>
-    <lastBuildDate>Fri, 11 Sep 2020 18:20:29 +0900</lastBuildDate>
+    <lastBuildDate>Tue, 02 Jan 2024 23:01:50 +0900</lastBuildDate>
     <atom:link href="https://penspanic.github.io/tags/keyboard/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Happy Hacking Studio Review</title>
+      <link>https://penspanic.github.io/posts/personal/hhkb_studio_review/</link>
+      <pubDate>Tue, 02 Jan 2024 23:01:50 +0900</pubDate>
+      <guid>https://penspanic.github.io/posts/personal/hhkb_studio_review/</guid>
+      <description>인트로 난 해피해킹 추종자다.
+몇년전 오른 손목 통증으로 더 작은 키보드를 찾다가
+65% &amp;ndash;&amp;gt; 60% &amp;ndash;&amp;gt; HHKB로 정착하게 되었다.
+HHKB Hybrid Type S가 출시되자 말자 거의 바로 사서 3년 반 가량 사용했는데,
+얼마전 HHKB Studio라는 충격적인 모델이 출시한 것이다.
+&amp;lt;충격 포인트&amp;gt;
+무접점 X, 기계식 그럼에도 비싼 가격(40만원이상, 관세 포함 구매대행가 50만원..) 빨콩같은 것 탑재(Pointing Stick) 제스쳐 패드(?!) 조금 고민하다가..
+물론 어떻게 구매할지, 흰색나올 때 까지 기다릴지를 고민하다가,
+네이버 쇼핑 구매대행을 통해 구매했다.</description>
+    </item>
     <item>
       <title>나의 키보드 변천사</title>
       <link>https://penspanic.github.io/posts/personal/my-keyboard-history/</link>

@@ -181,6 +181,26 @@ if (!doNotTrack) {
 
 <article class="post-entry"> 
   <header class="entry-header">
+    <h2 class="entry-hint-parent">개발중인 프로젝트 구성안 - 3
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>세번째 포스트는 프로젝트에서 사용중인 Library와 Package들에 대해 소개하려 한다.
+MessagePack GitHub
+프로젝트 시작시 Serialization Library를 어떤 것을 사용할지 꽤 고민했었다.
+이전 프로젝트에선 client &lt;-&gt; server 통신시 Protobuf를 사용했었는데, 이게 꽤나 불편했었다. -_-
+IDL을 수정하고, Compile하고, Compile된 결과물을 각각 project에 복사하고.
+(자동화 스크립트가 있다고 하더라도 꽤나 귀찮았다.)
+이번 프로젝트에선 모든 Language를 C#으로 통일했기에, IDL을 사용할 필요가 없어져서
+Protobuf은 후보 선상에서 제외.
+또한 output에 meta-data 없이 payload 만 필요하기 때문에, 그 면에서도 MessagePack이 적합하다고 판단했다....</p>
+  </div>
+  <footer class="entry-footer"><span title='2020-10-04 18:20:29 +0900 KST'>October 4, 2020</span>&nbsp;·&nbsp;3 min&nbsp;·&nbsp;484 words&nbsp;·&nbsp;penspanic</footer>
+  <a class="entry-link" aria-label="post link to 개발중인 프로젝트 구성안 - 3" href="https://penspanic.github.io/posts/architecture/2020-10-in-dev-project-3/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
     <h2 class="entry-hint-parent">개발중인 프로젝트 구성안 - 2
     </h2>
   </header>
@@ -229,7 +249,7 @@ C# 에서도 C&#43;&#43; 에서처럼 직접 메모리를 할당 할 수 있다.
 IntPtr memory = Marshal.AllocHGlobal(100); for (int i = 0; i &lt; 100; &#43;&#43;i) { ((byte*) memory)[i] = (byte)(i &#43; 1); } Marshal.FreeHGlobal(memory); stackalloc 표현식 Stack 에 메모리가 할당됨. 그 Stack을 벗어날 때 자동으로 메모리 해제.
 일시적인 계산을 위한 메모리를 사용할 때, stackalloc을 사용함으로써 Managed Heap에 할당되지 않게 하여 최적화 가능....</p>
   </div>
-  <footer class="entry-footer"><span title='2020-09-28 18:20:29 +0900 KST'>September 28, 2020</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;158 words&nbsp;·&nbsp;penspanic</footer>
+  <footer class="entry-footer"><span title='2020-09-28 18:20:29 +0900 KST'>September 28, 2020</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;179 words&nbsp;·&nbsp;penspanic</footer>
   <a class="entry-link" aria-label="post link to C# Unmanaged Memory" href="https://penspanic.github.io/posts/csharp/csharp-unmanaged-memory/"></a>
 </article>
 
@@ -250,21 +270,8 @@ IntPtr memory = Marshal.AllocHGlobal(100); for (int i = 0; i &lt; 100; &#43;&#43
 라고 생각하게 됐다.
 느리다는 것 처리 시간이 오래 걸린다....</p>
   </div>
-  <footer class="entry-footer"><span title='2020-09-25 18:20:29 +0900 KST'>September 25, 2020</span>&nbsp;·&nbsp;2 min&nbsp;·&nbsp;422 words&nbsp;·&nbsp;penspanic</footer>
+  <footer class="entry-footer"><span title='2020-09-25 18:20:29 +0900 KST'>September 25, 2020</span>&nbsp;·&nbsp;3 min&nbsp;·&nbsp;587 words&nbsp;·&nbsp;penspanic</footer>
   <a class="entry-link" aria-label="post link to C# - Reflection에 대한 고찰" href="https://penspanic.github.io/posts/csharp/thoughts-about-csharp-reflection/"></a>
-</article>
-
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2 class="entry-hint-parent">C# 람다 내부 구현
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>마법은 없다. Lambda를 컴파일러가 어떤식으로 구현하는지 알아둘 필요가 있다. public static class LambdaExample { public static void Run() { int localInt = 123456789; string localString = &#34;LocalString&#34;; ActionRunner(() =&gt; { Console.WriteLine($&#34;{localInt}, {localString}&#34;); }); } private static void ActionRunner(Action action) { action?.Invoke(); } } 위의 코드는 아래와 같이 해석될 수 있다.
-public static class LambdaExampleTranslated { public class LambdaClass { public int localInt; public string localString; public void Run() { Console.WriteLine($&#34;{localInt}, {localString}&#34;); } } public static void Run() { int localInt = 123456789; string localString = &#34;LocalString&#34;; ActionRunner(new LambdaClass { localInt = localInt, localString = localString } ....</p>
-  </div>
-  <footer class="entry-footer"><span title='2020-09-20 18:20:29 +0900 KST'>September 20, 2020</span>&nbsp;·&nbsp;2 min&nbsp;·&nbsp;364 words&nbsp;·&nbsp;penspanic</footer>
-  <a class="entry-link" aria-label="post link to C# 람다 내부 구현" href="https://penspanic.github.io/posts/csharp/csharp-lambda/"></a>
 </article>
 <footer class="page-footer">
   <nav class="pagination">
@@ -278,7 +285,7 @@ public static class LambdaExampleTranslated { public class LambdaClass { public 
     </main>
     
 <footer class="footer">
-    <span>&copy; 2023 <a href="https://penspanic.github.io/">penspanic&#39;s Devlog</a></span>
+    <span>&copy; 2024 <a href="https://penspanic.github.io/">penspanic&#39;s Devlog</a></span>
     <span>
         Powered by
         <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &

@@ -127,8 +127,8 @@ IntPtr memory = Marshal.AllocHGlobal(100); for (int i = 0; i &lt; 100; &#43;&#43
   "keywords": [
     "C#"
   ],
-  "articleBody": "Managed Memory CLR(Common Language Runtime)이 관리하는 메모리. Garbage Collection의 대상이 된다.\nUnmanaged Memory Managed Memory가 아닌 것.\nC# 에서도 C++ 에서처럼 직접 메모리를 할당 할 수 있다.\nIntPtr memory = Marshal.AllocHGlobal(100); for (int i = 0; i \u003c 100; ++i) { ((byte*) memory)[i] = (byte)(i + 1); } Marshal.FreeHGlobal(memory); stackalloc 표현식 Stack 에 메모리가 할당됨. 그 Stack을 벗어날 때 자동으로 메모리 해제.\n일시적인 계산을 위한 메모리를 사용할 때, stackalloc을 사용함으로써 Managed Heap에 할당되지 않게 하여 최적화 가능.\npublic void RemoveAll() // Dash.Core.Systems.GeneratorSystem { Span\u003cint\u003e serials = stackalloc int[_generators.Count]; int index = 0; foreach (int serial in _generators.Keys) { serials[index++] = serial; } foreach (int serial in serials) { _generators.Remove(serial); } } 사견 C#을 막연하게 C, C++ 보다 느리다고 생각하는 사람들이 많다.\n심지어 C#을 메인 스킬로 다루는 사람들까지도.\n어떤 부분에서 퍼포먼스가 떨어지는 것인지, 그걸 해결하기 위한 방법이 있는지에 대해\n자세히 알아야 할 필요가 있다고 생각한다.\n그렇게 생각하게 된 이유를 공유하고 싶고,\n.Net 및 Managed Langauge에 대한 편견을 없애보고 싶다.\n",
-  "wordCount" : "158",
+  "articleBody": "Managed Memory CLR(Common Language Runtime)이 관리하는 메모리. Garbage Collection의 대상이 된다.\nUnmanaged Memory Managed Memory가 아닌 것.\nC# 에서도 C++ 에서처럼 직접 메모리를 할당 할 수 있다.\nIntPtr memory = Marshal.AllocHGlobal(100); for (int i = 0; i \u003c 100; ++i) { ((byte*) memory)[i] = (byte)(i + 1); } Marshal.FreeHGlobal(memory); stackalloc 표현식 Stack 에 메모리가 할당됨. 그 Stack을 벗어날 때 자동으로 메모리 해제.\n일시적인 계산을 위한 메모리를 사용할 때, stackalloc을 사용함으로써 Managed Heap에 할당되지 않게 하여 최적화 가능.\npublic void RemoveAll() // Dash.Core.Systems.GeneratorSystem { Span\u003cint\u003e serials = stackalloc int[_generators.Count]; int index = 0; foreach (int serial in _generators.Keys) { serials[index++] = serial; } foreach (int serial in serials) { _generators.Remove(serial); } } 사견 C#을 막연하게 C, C++ 보다 느리다고 생각하는 사람들이 많다.\n심지어 C#을 메인 스킬로 다루는 사람들까지도.\n어떤 부분에서 퍼포먼스가 떨어지는 것인지, 그걸 해결하기 위한 방법이 있는지에 대해\n자세히 알아야 할 필요가 있다고 생각한다.\nN년간 C# / .Net에 관심을 가저오며 지금은 **C#으로도 *High Performance Program*을 만들 수 있다, 하지만 쉽지 않을 것이다** 라는 결론에 도달했다.\r그렇게 생각하게 된 이유를 공유하고 싶고,\n.Net 및 Managed Langauge에 대한 편견을 없애보고 싶다.\n",
+  "wordCount" : "179",
   "inLanguage": "en",
   "datePublished": "2020-09-28T18:20:29+09:00",
   "dateModified": "2020-09-28T18:20:29+09:00",
@@ -226,7 +226,7 @@ IntPtr memory = Marshal.AllocHGlobal(100); for (int i = 0; i &lt; 100; &#43;&#43
     <h1 class="post-title entry-hint-parent">
       C# Unmanaged Memory
     </h1>
-    <div class="post-meta"><span title='2020-09-28 18:20:29 +0900 KST'>September 28, 2020</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;158 words&nbsp;·&nbsp;penspanic&nbsp;|&nbsp;<a href="https://github.com/penspanic/penspanic.github.io-source/tree/master/content/posts/CSharp/csharp-unmanaged-memory/index.md" rel="noopener noreferrer" target="_blank">Suggest Changes</a>
+    <div class="post-meta"><span title='2020-09-28 18:20:29 +0900 KST'>September 28, 2020</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;179 words&nbsp;·&nbsp;penspanic&nbsp;|&nbsp;<a href="https://github.com/penspanic/penspanic.github.io-source/tree/master/content/posts/CSharp/csharp-unmanaged-memory/index.md" rel="noopener noreferrer" target="_blank">Suggest Changes</a>
 
 </div>
   </header> 
@@ -267,7 +267,10 @@ Managed Heap에 할당되지 않게 하여 최적화 가능.</p>
 심지어 C#을 메인 스킬로 다루는 사람들까지도.</p>
 <p>어떤 부분에서 퍼포먼스가 떨어지는 것인지, 그걸 해결하기 위한 방법이 있는지에 대해<br>
 자세히 알아야 할 필요가 있다고 생각한다.</p>
-<!-- raw HTML omitted -->
+<br>
+N년간 C# / .Net에 관심을 가저오며 지금은  
+**C#으로도 *High Performance Program*을 만들 수 있다, 하지만 쉽지 않을 것이다**  
+라는 결론에 도달했다.
 <p>그렇게 생각하게 된 이유를 공유하고 싶고,<br>
 .Net 및 Managed Langauge에 대한 편견을 없애보고 싶다.</p>
 
@@ -364,7 +367,7 @@ Managed Heap에 할당되지 않게 하여 최적화 가능.</p>
     </main>
     
 <footer class="footer">
-    <span>&copy; 2023 <a href="https://penspanic.github.io/">penspanic&#39;s Devlog</a></span>
+    <span>&copy; 2024 <a href="https://penspanic.github.io/">penspanic&#39;s Devlog</a></span>
     <span>
         Powered by
         <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &

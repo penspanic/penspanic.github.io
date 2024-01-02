@@ -5,11 +5,11 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="robots" content="index, follow">
-<title>Posts | penspanic&#39;s Devlog</title>
+<title>happy hacking | penspanic&#39;s Devlog</title>
 <meta name="keywords" content="">
-<meta name="description" content="Posts - penspanic&#39;s Devlog">
+<meta name="description" content="penspanic&#39;s Devlog">
 <meta name="author" content="penspanic">
-<link rel="canonical" href="https://penspanic.github.io/posts/">
+<link rel="canonical" href="https://penspanic.github.io/tags/happy-hacking/">
 <meta name="google-site-verification" content="XYZabc">
 <meta name="yandex-verification" content="XYZabc">
 <meta name="msvalidate.01" content="XYZabc">
@@ -21,7 +21,7 @@
 <link rel="mask-icon" href="https://penspanic.github.io/%3Clink%20/%20abs%20url%3E">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
-<link rel="alternate" type="application/rss+xml" href="https://penspanic.github.io/posts/index.xml">
+<link rel="alternate" type="application/rss+xml" href="https://penspanic.github.io/tags/happy-hacking/index.xml">
 <noscript>
     <style>
         #theme-toggle,
@@ -70,32 +70,17 @@ if (!doNotTrack) {
 	
 	ga('send', 'pageview');
 }
-</script><meta property="og:title" content="Posts" />
+</script><meta property="og:title" content="happy hacking" />
 <meta property="og:description" content="penspanic&#39;s Devlog" />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="https://penspanic.github.io/posts/" /><meta property="og:image" content="https://penspanic.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E"/><meta property="og:site_name" content="penspanic&#39;s Devlog" />
+<meta property="og:url" content="https://penspanic.github.io/tags/happy-hacking/" /><meta property="og:image" content="https://penspanic.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E"/><meta property="og:site_name" content="penspanic&#39;s Devlog" />
 
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://penspanic.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E"/>
 
-<meta name="twitter:title" content="Posts"/>
+<meta name="twitter:title" content="happy hacking"/>
 <meta name="twitter:description" content="penspanic&#39;s Devlog"/>
 
-
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position":  1 ,
-      "name": "Posts",
-      "item": "https://penspanic.github.io/posts/"
-    }
-  ]
-}
-</script>
 </head>
 
 <body class="list" id="top">
@@ -165,10 +150,10 @@ if (!doNotTrack) {
     </nav>
 </header>
 <main class="main"> 
-<header class="page-header"><div class="breadcrumbs"><a href="https://penspanic.github.io/">Home</a></div>
+<header class="page-header"><div class="breadcrumbs"><a href="https://penspanic.github.io/">Home</a>&nbsp;»&nbsp;<a href="https://penspanic.github.io/tags/">Tags</a></div>
   <h1>
-    Posts
-    <a href="/posts/index.xml" title="RSS" aria-label="RSS">
+    happy hacking
+    <a href="/tags/happy-hacking/index.xml" title="RSS" aria-label="RSS">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
         stroke-linecap="round" stroke-linejoin="round" height="23">
         <path d="M4 11a9 9 0 0 1 9 9" />
@@ -179,7 +164,7 @@ if (!doNotTrack) {
   </h1>
 </header>
 
-<article class="post-entry"> 
+<article class="post-entry tag-entry"> 
   <header class="entry-header">
     <h2 class="entry-hint-parent">Happy Hacking Studio Review
     </h2>
@@ -198,81 +183,6 @@ HHKB Hybrid Type S가 출시되자 말자 거의 바로 사서 3년 반 가량 �
   <footer class="entry-footer"><span title='2024-01-02 23:01:50 +0900 KST'>January 2, 2024</span>&nbsp;·&nbsp;2 min&nbsp;·&nbsp;422 words&nbsp;·&nbsp;penspanic</footer>
   <a class="entry-link" aria-label="post link to Happy Hacking Studio Review" href="https://penspanic.github.io/posts/personal/hhkb_studio_review/"></a>
 </article>
-
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2 class="entry-hint-parent">OpenCVSharp Frame Buffer Pooling
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>OpenCVSharp을 사용해 비디오의 매 프레임을 가져오는 기능을 개발했다.
-private static void ReadEachFrame_Normal() { string path = &#34;path/top/your/video.mp4&#34;; VideoCapture capture = new VideoCapture(path); capture.Open(path); using Mat frame = new Mat(); while (capture.Read(frame)) { byte[] bytes = frame.ToBytes(); } } OpenCVSharp 라이브러리에는 내가 아는한 쉽게 프레임 버퍼를 입력한 버퍼로 가져오거나, 풀링이 적용된 형태로 가져올 수 있는 방법이 없다.
-Mat.ToBytes()로 새로 생성된 byte[] 객체를 반환받는 방법이 가장 일반적으로 보였다.
-내가 사용하는 케이스에선 동시에 여러 비디오의 프레임을 가져오다보니...</p>
-  </div>
-  <footer class="entry-footer"><span title='2023-12-28 19:15:51 +0900 KST'>December 28, 2023</span>&nbsp;·&nbsp;2 min&nbsp;·&nbsp;356 words&nbsp;·&nbsp;penspanic</footer>
-  <a class="entry-link" aria-label="post link to OpenCVSharp Frame Buffer Pooling" href="https://penspanic.github.io/posts/csharp/opencvsharpbufferpooling/"></a>
-</article>
-
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2 class="entry-hint-parent">C# 9.0 신기능 프리뷰
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>C# 9.0 써보기전 주관적 프리뷰 이번에 릴리즈된 C# 9.0의 기능을 살펴봤다.
-MS Docs 링크에 워낙 잘 설명돼있어서 기능에 대한 설명 자체는 자세히 다루지 않겠다.
-record type 새로운 Reference Type이 추가되었다.
-몰랐는데, class 만 reference type 인줄 알았는데 익명 타입도 reference type에 포함된다고 한다.
-어차피 C# 컴파일러가 익명 타입을 class로 변환할 것 같지만..
-역시 그렇다. 내부적으론 Tuple&lt;,&gt; 등과 비슷하게 구현됐다고 보면 될 것 같음.
-내가 생각하는 도입 사유 기존의 class(reference type)으로 immutable type을 구현하기 좀 까다로웠다....</p>
-  </div>
-  <footer class="entry-footer"><span title='2020-12-07 18:20:29 +0900 KST'>December 7, 2020</span>&nbsp;·&nbsp;4 min&nbsp;·&nbsp;661 words&nbsp;·&nbsp;penspanic</footer>
-  <a class="entry-link" aria-label="post link to C# 9.0 신기능 프리뷰" href="https://penspanic.github.io/posts/csharp/csharp-9-0-features-preview/"></a>
-</article>
-
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2 class="entry-hint-parent">C# lock의 내부 구현
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>C# 프로그래밍을 하다보면 자연스레 멀티쓰레딩 환경에서 자원 획득 제한이 필요한 경우 lock을 사용했었다.
-이 lock 키워드 및 블럭을 사용했을 때 내부적으로 어떻게 동작되는지 궁금해서 알아보았다.
-lock 문 lock statement(lock 문) Microsoft Docs
-lock은 공식 문서에 문이라고 한다.
-Language Reference Statement Keywords lock Statement 위와 같은 구조로 Document에 구성되어 있다.
-이 것의 동작 방식을 까보려면 역시 Decompile.
-private void DoAdd(int value) { lock (_collection) { _collection.Add(value); } } 위 코드를 Decompile시 아래의 il로 해석된다....</p>
-  </div>
-  <footer class="entry-footer"><span title='2020-10-10 18:20:29 +0900 KST'>October 10, 2020</span>&nbsp;·&nbsp;2 min&nbsp;·&nbsp;424 words&nbsp;·&nbsp;penspanic</footer>
-  <a class="entry-link" aria-label="post link to C# lock의 내부 구현" href="https://penspanic.github.io/posts/csharp/csharp-lock-implementation/"></a>
-</article>
-
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2 class="entry-hint-parent">개발중인 프로젝트 구성안 - 4
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>근래엔 Code 생성을 적극적으로 활용하고 있다.
-반복 작업 최소화, 실수 방지 측면에서 효율적이라 생각한다.
-그 부분들에 대해 소개하려 한다.
-MessagePack Code Generation MessagePack은 AOT Code Generation을 지원한다.
-Unity에서 MessagePack을 사용하기 때문에 AOT로 직접 생성된 Formatter를 사용한 결과가 더 좋기 때문에 AOT Code Generation을 사용한다. (mobile platform에선 il emit을 허용하지 않음 Unity documentation)
-측정 결과가 다른 것을 경험하고 server에도 AOT 생성된 Formatter를 사용하는데.. 정확한 결과 비교는 해봐야 알 듯.
-기억에 남는건 기본 MessagePack 의 Serialize 결과와 AOT Generated Formatter를 사용했을 때 결과가 달랐다....</p>
-  </div>
-  <footer class="entry-footer"><span title='2020-10-05 18:20:29 +0900 KST'>October 5, 2020</span>&nbsp;·&nbsp;3 min&nbsp;·&nbsp;528 words&nbsp;·&nbsp;penspanic</footer>
-  <a class="entry-link" aria-label="post link to 개발중인 프로젝트 구성안 - 4" href="https://penspanic.github.io/posts/architecture/2020-10-in-dev-project-4/"></a>
-</article>
-<footer class="page-footer">
-  <nav class="pagination">
-    <a class="next" href="https://penspanic.github.io/posts/page/2/">Next&nbsp;&nbsp;»
-    </a>
-  </nav>
-</footer>
     </main>
     
 <footer class="footer">
