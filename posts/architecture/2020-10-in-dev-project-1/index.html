@@ -65,18 +65,17 @@
 
     </style>
 </noscript>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-TGYR6BZ4H8"></script>
 <script>
 var doNotTrack = false;
 if (!doNotTrack) {
-	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-	ga('create', 'UA-123-45', 'auto');
-	
-	ga('send', 'pageview');
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+	gtag('config', 'G-TGYR6BZ4H8', { 'anonymize_ip': false });
 }
-</script><meta property="og:title" content="개발중인 프로젝트 구성안 - 1" />
+</script>
+<meta property="og:title" content="개발중인 프로젝트 구성안 - 1" />
 <meta property="og:description" content="이번 프로젝트 리드를 하며 아키텍쳐를 잡을 때 최우선 사항은 생산성 이었다.
 대형 프로젝트도 아니고, 소수의 프로그래머가 지속적으로 바뀌는 요구사항과 짧은 일정을 소화하려면 생산성이 가장 중요하다고 생각했다.
 유려한 아키텍쳐 및 프로젝트 구성 샐틈없는 강력한 보안의 코드 / 동기화 모델 엄청난 Throughput을 보여주는 고성능 프로그램 을 다 충족시키며 우리 팀의 목적 달성은 현실적으로 어렵다고 판단했다.

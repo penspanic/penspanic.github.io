@@ -64,18 +64,17 @@ IntPtr memory = Marshal.AllocHGlobal(100); for (int i = 0; i &lt; 100; &#43;&#43
 
     </style>
 </noscript>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-TGYR6BZ4H8"></script>
 <script>
 var doNotTrack = false;
 if (!doNotTrack) {
-	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-	ga('create', 'UA-123-45', 'auto');
-	
-	ga('send', 'pageview');
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+	gtag('config', 'G-TGYR6BZ4H8', { 'anonymize_ip': false });
 }
-</script><meta property="og:title" content="C# Unmanaged Memory" />
+</script>
+<meta property="og:title" content="C# Unmanaged Memory" />
 <meta property="og:description" content="Managed Memory CLR(Common Language Runtime)이 관리하는 메모리. Garbage Collection의 대상이 된다.
 Unmanaged Memory Managed Memory가 아닌 것.
 C# 에서도 C&#43;&#43; 에서처럼 직접 메모리를 할당 할 수 있다.

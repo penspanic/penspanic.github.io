@@ -66,18 +66,17 @@ Unity에서 MessagePack을 사용하기 때문에 AOT로 직접 생성된 Format
 
     </style>
 </noscript>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-TGYR6BZ4H8"></script>
 <script>
 var doNotTrack = false;
 if (!doNotTrack) {
-	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-	ga('create', 'UA-123-45', 'auto');
-	
-	ga('send', 'pageview');
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+	gtag('config', 'G-TGYR6BZ4H8', { 'anonymize_ip': false });
 }
-</script><meta property="og:title" content="개발중인 프로젝트 구성안 - 4" />
+</script>
+<meta property="og:title" content="개발중인 프로젝트 구성안 - 4" />
 <meta property="og:description" content="근래엔 Code 생성을 적극적으로 활용하고 있다.
 반복 작업 최소화, 실수 방지 측면에서 효율적이라 생각한다.
 그 부분들에 대해 소개하려 한다.
