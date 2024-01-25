@@ -11,8 +11,25 @@
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-kr</language>
-    <lastBuildDate>Mon, 07 Dec 2020 18:20:29 +0900</lastBuildDate>
+    <lastBuildDate>Fri, 12 Jan 2024 17:28:08 +0900</lastBuildDate>
     <atom:link href="https://penspanic.github.io/tags/c#/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Unity DOTS : Entity Scene과 Mono Scene 비교</title>
+      <link>https://penspanic.github.io/posts/unity/dots/dotssceneandmonoscenecomparison/</link>
+      <pubDate>Fri, 12 Jan 2024 17:28:08 +0900</pubDate>
+      <guid>https://penspanic.github.io/posts/unity/dots/dotssceneandmonoscenecomparison/</guid>
+      <description>Unity의 DOTS 씬과 일반 씬 기술적 비교</description>
+    </item>
+    <item>
+      <title>OpenCVSharp Frame Buffer Pooling</title>
+      <link>https://penspanic.github.io/posts/csharp/opencvsharpbufferpooling/</link>
+      <pubDate>Thu, 28 Dec 2023 19:15:51 +0900</pubDate>
+      <guid>https://penspanic.github.io/posts/csharp/opencvsharpbufferpooling/</guid>
+      <description>OpenCVSharp을 사용해 비디오의 매 프레임을 가져오는 기능을 개발했다.
+private static void ReadEachFrame_Normal() { string path = &amp;#34;path/top/your/video.mp4&amp;#34;; VideoCapture capture = new VideoCapture(path); capture.Open(path); using Mat frame = new Mat(); while (capture.Read(frame)) { byte[] bytes = frame.ToBytes(); } } OpenCVSharp 라이브러리에는 내가 아는한 쉽게 프레임 버퍼를 입력한 버퍼로 가져오거나, 풀링이 적용된 형태로 가져올 수 있는 방법이 없다.
+Mat.ToBytes()로 새로 생성된 byte[] 객체를 반환받는 방법이 가장 일반적으로 보였다.
+내가 사용하는 케이스에선 동시에 여러 비디오의 프레임을 가져오다보니</description>
+    </item>
     <item>
       <title>C# 9.0 신기능 프리뷰</title>
       <link>https://penspanic.github.io/posts/csharp/csharp-9-0-features-preview/</link>

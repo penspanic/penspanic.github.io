@@ -11,8 +11,22 @@
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-kr</language>
-    <lastBuildDate>Tue, 02 Jan 2024 23:01:50 +0900</lastBuildDate>
+    <lastBuildDate>Fri, 12 Jan 2024 17:28:08 +0900</lastBuildDate>
     <atom:link href="https://penspanic.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>DOTS</title>
+      <link>https://penspanic.github.io/categories/dots/</link>
+      <pubDate>Fri, 12 Jan 2024 17:28:08 +0900</pubDate>
+      <guid>https://penspanic.github.io/categories/dots/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Unity</title>
+      <link>https://penspanic.github.io/categories/unity/</link>
+      <pubDate>Fri, 12 Jan 2024 17:28:08 +0900</pubDate>
+      <guid>https://penspanic.github.io/categories/unity/</guid>
+      <description></description>
+    </item>
     <item>
       <title>Personal</title>
       <link>https://penspanic.github.io/categories/personal/</link>
@@ -21,24 +35,10 @@
       <description></description>
     </item>
     <item>
-      <title>C#</title>
-      <link>https://penspanic.github.io/categories/c#/</link>
-      <pubDate>Thu, 28 Dec 2023 19:15:51 +0900</pubDate>
-      <guid>https://penspanic.github.io/categories/c#/</guid>
-      <description></description>
-    </item>
-    <item>
       <title>OpenCV</title>
       <link>https://penspanic.github.io/categories/opencv/</link>
       <pubDate>Thu, 28 Dec 2023 19:15:51 +0900</pubDate>
       <guid>https://penspanic.github.io/categories/opencv/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Optimization</title>
-      <link>https://penspanic.github.io/categories/optimization/</link>
-      <pubDate>Thu, 28 Dec 2023 19:15:51 +0900</pubDate>
-      <guid>https://penspanic.github.io/categories/optimization/</guid>
       <description></description>
     </item>
     <item>
@@ -53,13 +53,6 @@
       <link>https://penspanic.github.io/categories/architecture/</link>
       <pubDate>Mon, 05 Oct 2020 18:20:29 +0900</pubDate>
       <guid>https://penspanic.github.io/categories/architecture/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Unity</title>
-      <link>https://penspanic.github.io/categories/unity/</link>
-      <pubDate>Fri, 18 Sep 2020 18:20:29 +0900</pubDate>
-      <guid>https://penspanic.github.io/categories/unity/</guid>
       <description></description>
     </item>
   </channel>

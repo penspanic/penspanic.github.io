@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="robots" content="index, follow">
 <title>OpenCVSharp Frame Buffer Pooling | penspanic&#39;s Devlog</title>
-<meta name="keywords" content="">
+<meta name="keywords" content="C#, OpenCV, Optimization">
 <meta name="description" content="OpenCVSharp을 사용해 비디오의 매 프레임을 가져오는 기능을 개발했다.
 private static void ReadEachFrame_Normal() { string path = &#34;path/top/your/video.mp4&#34;; VideoCapture capture = new VideoCapture(path); capture.Open(path); using Mat frame = new Mat(); while (capture.Read(frame)) { byte[] bytes = frame.ToBytes(); } } OpenCVSharp 라이브러리에는 내가 아는한 쉽게 프레임 버퍼를 입력한 버퍼로 가져오거나, 풀링이 적용된 형태로 가져올 수 있는 방법이 없다.
 Mat.ToBytes()로 새로 생성된 byte[] 객체를 반환받는 방법이 가장 일반적으로 보였다.
@@ -121,7 +121,7 @@ Mat.ToBytes()로 새로 생성된 byte[] 객체를 반환받는 방법이 가장
   "name": "OpenCVSharp Frame Buffer Pooling",
   "description": "OpenCVSharp을 사용해 비디오의 매 프레임을 가져오는 기능을 개발했다.\nprivate static void ReadEachFrame_Normal() { string path = \u0026#34;path/top/your/video.mp4\u0026#34;; VideoCapture capture = new VideoCapture(path); capture.Open(path); using Mat frame = new Mat(); while (capture.Read(frame)) { byte[] bytes = frame.ToBytes(); } } OpenCVSharp 라이브러리에는 내가 아는한 쉽게 프레임 버퍼를 입력한 버퍼로 가져오거나, 풀링이 적용된 형태로 가져올 수 있는 방법이 없다.\nMat.ToBytes()로 새로 생성된 byte[] 객체를 반환받는 방법이 가장 일반적으로 보였다.\n내가 사용하는 케이스에선 동시에 여러 비디오의 프레임을 가져오다보니",
   "keywords": [
-    
+    "C#", "OpenCV", "Optimization"
   ],
   "articleBody": "OpenCVSharp을 사용해 비디오의 매 프레임을 가져오는 기능을 개발했다.\nprivate static void ReadEachFrame_Normal() { string path = \"path/top/your/video.mp4\"; VideoCapture capture = new VideoCapture(path); capture.Open(path); using Mat frame = new Mat(); while (capture.Read(frame)) { byte[] bytes = frame.ToBytes(); } } OpenCVSharp 라이브러리에는 내가 아는한 쉽게 프레임 버퍼를 입력한 버퍼로 가져오거나, 풀링이 적용된 형태로 가져올 수 있는 방법이 없다.\nMat.ToBytes()로 새로 생성된 byte[] 객체를 반환받는 방법이 가장 일반적으로 보였다.\n내가 사용하는 케이스에선 동시에 여러 비디오의 프레임을 가져오다보니\nbyte[]의 할당과 버려짐이 상당했다.\n그로 인해 GC 압력이 증가하고, 잦은 GC Collect가 일어날 것이 자명했다.\n따라서 풀링을 적용해보기 위해 구글링을 열심히 한 결과..\nhttps://github.com/shimat/opencvsharp/issues/784 에서 힌트를 찾을 수 있었다.\n위 방법과 적절한 캡슐화를 거쳐서 아래의 코드를 작성했다.\npublic struct PoolingBytes : IDisposable { public PoolingBytes(IMemoryOwner\u003cbyte\u003e memory, int offset, int length) { Memory = memory; Length = length; } public IMemoryOwner\u003cbyte\u003e? Memory { get; private set; } public int Offset { get; init; } public int Length { get; init; } public void Dispose() { if (Memory != null) { Memory.Dispose(); Memory = null; } } public ReadOnlySpan\u003cbyte\u003e AsSpan() { return Memory!.Memory.Span.Slice(Offset, Length); } } ... public static unsafe PoolingBytes GetBytesPooled(Mat mat, VectorOfByte bufferVec) { InputArray inputArray = mat; NativeMethods.imgcodecs_imencode_vector(\".png\", inputArray.CvPtr, bufferVec.CvPtr, null, 0, out int ret); var rentArray = MemoryPool\u003cbyte\u003e.Shared.Rent(bufferVec.Size); using var pin = rentArray.Memory.Pin(); Buffer.MemoryCopy((void*)bufferVec.ElemPtr, (void*)pin.Pointer, bufferVec.Size, bufferVec.Size); return new PoolingBytes(rentArray, 0, bufferVec.Size); } MemoryPool.Shared.Rent()를 호출하면 입력한 파라미터보다 크거나 같은 크기의 메모리를 반환한다.\n그렇기에 정확한 이미지 버퍼 영역을 지정하기 위해 추가적으로 Offset과 Length 프로퍼티를 사용한다.\nTest Code:\n[MemoryDiagnoser] [SimpleJob(RunStrategy.ColdStart, launchCount: 1, iterationCount: 1000)] public class OpenCVPooling : IDisposable { string path = \"path/top/your/video.mp4\"; private VideoCapture? capture; private Mat frame = new Mat(); private VectorOfByte bufferVec = new VectorOfByte(); public void Dispose() { frame?.Dispose(); bufferVec?.Dispose(); } [IterationSetup] public void Setup() { capture?.Dispose(); capture = new VideoCapture(videoPath); capture.Read(frame); } [Benchmark] public void Normal() { byte[] bytes = frame.ToBytes(); } [Benchmark] public void Pooled() { using PoolingBytes bytes = OpenCVUtility.GetBytesPooled(frame, bufferVec); } BenchmarkDotNet으로 테스트한 결과이다.\n소요 시간자체는 큰 차이가 없지만, Allocation을 거의 없앴다는 점을 주목해야 한다.\nMethod Mean Error StdDev Median Allocated Normal 18.66 ms 0.053 ms 0.511 ms 18.57 ms 1072120 B Pooled 17.88 ms 0.044 ms 0.423 ms 17.76 ms 840 B ",
   "wordCount" : "356",
@@ -360,6 +360,9 @@ byte[]의 할당과 버려짐이 상당했다.<br>
 
   <footer class="post-footer">
     <ul class="post-tags">
+      <li><a href="https://penspanic.github.io/tags/c#/">C#</a></li>
+      <li><a href="https://penspanic.github.io/tags/opencv/">OpenCV</a></li>
+      <li><a href="https://penspanic.github.io/tags/optimization/">Optimization</a></li>
     </ul>
 <nav class="paginav">
   <a class="prev" href="https://penspanic.github.io/posts/personal/hhkb_studio_review/">
@@ -378,7 +381,7 @@ byte[]의 할당과 버려짐이 상당했다.<br>
 <ul class="share-buttons">
     <li>
         <a target="_blank" rel="noopener noreferrer" aria-label="share OpenCVSharp Frame Buffer Pooling on x"
-            href="https://x.com/intent/tweet/?text=OpenCVSharp%20Frame%20Buffer%20Pooling&amp;url=https%3a%2f%2fpenspanic.github.io%2fposts%2fcsharp%2fopencvsharpbufferpooling%2f&amp;hashtags=">
+            href="https://x.com/intent/tweet/?text=OpenCVSharp%20Frame%20Buffer%20Pooling&amp;url=https%3a%2f%2fpenspanic.github.io%2fposts%2fcsharp%2fopencvsharpbufferpooling%2f&amp;hashtags=C%23%2cOpenCV%2cOptimization">
             <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve" height="30px" width="30px" fill="currentColor">
                 <path
                     d="M512 62.554 L 512 449.446 C 512 483.97 483.97 512 449.446 512 L 62.554 512 C 28.03 512 0 483.97 0 449.446 L 0 62.554 C 0 28.03 28.029 0 62.554 0 L 449.446 0 C 483.971 0 512 28.03 512 62.554 Z M 269.951 190.75 L 182.567 75.216 L 56 75.216 L 207.216 272.95 L 63.9 436.783 L 125.266 436.783 L 235.9 310.383 L 332.567 436.783 L 456 436.783 L 298.367 228.367 L 432.367 75.216 L 371.033 75.216 Z M 127.633 110 L 164.101 110 L 383.481 400.065 L 349.5 400.065 Z" />
