@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="robots" content="index, follow">
 <title>Unity - Assembly Definition | penspanic&#39;s Devlog</title>
-<meta name="keywords" content="C#, Unity">
+<meta name="keywords" content="CSharp, Unity">
 <meta name="description" content="요약 Assembly를 나누어, 모듈별 의존성을 명확하게 관리하고, 컴파일 시간을 줄인다.
 내용 기본 Unity 컴파일 시스템은 2개의 Assembly를 만들어낸다.
 프로젝트 안 소스파일들이 기본적으로 Assembly-CSharp에 포함되고, &ldquo;Editor&rdquo; 란 이름의 Directory안의 소스파일들은 Assembly-Csharp-Editor에 포함된다.
@@ -127,7 +127,7 @@ if (!doNotTrack) {
   "name": "Unity - Assembly Definition",
   "description": "요약 Assembly를 나누어, 모듈별 의존성을 명확하게 관리하고, 컴파일 시간을 줄인다.\n내용 기본 Unity 컴파일 시스템은 2개의 Assembly를 만들어낸다.\n프로젝트 안 소스파일들이 기본적으로 Assembly-CSharp에 포함되고, \u0026ldquo;Editor\u0026rdquo; 란 이름의 Directory안의 소스파일들은 Assembly-Csharp-Editor에 포함된다.\n결국, 특정 소스코드를 1줄만 수정을 해도 그 소스코드가 포함된 어셈블리를 다시 컴파일 해야 한다. 이 과정에서 프로젝트가 커지고, 모듈이 많이 붙을 수록 컴파일 시간이 길어진다.\n이 문제를 해결할 수 있는 기능이 Unity 2018에 추가된 Assembly Definition 기능이다.\n스크립트 컴파일 및 어셈블리 정의 파일(Script compilation and assembly definition files) - Unity 매뉴얼",
   "keywords": [
-    "C#", "Unity"
+    "CSharp", "Unity"
   ],
   "articleBody": "요약 Assembly를 나누어, 모듈별 의존성을 명확하게 관리하고, 컴파일 시간을 줄인다.\n내용 기본 Unity 컴파일 시스템은 2개의 Assembly를 만들어낸다.\n프로젝트 안 소스파일들이 기본적으로 Assembly-CSharp에 포함되고, “Editor” 란 이름의 Directory안의 소스파일들은 Assembly-Csharp-Editor에 포함된다.\n결국, 특정 소스코드를 1줄만 수정을 해도 그 소스코드가 포함된 어셈블리를 다시 컴파일 해야 한다. 이 과정에서 프로젝트가 커지고, 모듈이 많이 붙을 수록 컴파일 시간이 길어진다.\n이 문제를 해결할 수 있는 기능이 Unity 2018에 추가된 Assembly Definition 기능이다.\n스크립트 컴파일 및 어셈블리 정의 파일(Script compilation and assembly definition files) - Unity 매뉴얼\n기타 컴파일 타임과 상관없이 모듈화하여 종속성 관리하는 것이 구조적으로 올바르기 때문에\n이 기능을 적용하고 잘 사용해야 할 필요성이 있다.\n",
   "wordCount" : "101",
@@ -256,7 +256,7 @@ if (!doNotTrack) {
 
   <footer class="post-footer">
     <ul class="post-tags">
-      <li><a href="https://penspanic.github.io/tags/c#/">C#</a></li>
+      <li><a href="https://penspanic.github.io/tags/csharp/">CSharp</a></li>
       <li><a href="https://penspanic.github.io/tags/unity/">Unity</a></li>
     </ul>
 <nav class="paginav">
@@ -276,7 +276,7 @@ if (!doNotTrack) {
 <ul class="share-buttons">
     <li>
         <a target="_blank" rel="noopener noreferrer" aria-label="share Unity - Assembly Definition on x"
-            href="https://x.com/intent/tweet/?text=Unity%20-%20Assembly%20Definition&amp;url=https%3a%2f%2fpenspanic.github.io%2fposts%2funity%2fabout-assembly-definition%2f&amp;hashtags=C%23%2cUnity">
+            href="https://x.com/intent/tweet/?text=Unity%20-%20Assembly%20Definition&amp;url=https%3a%2f%2fpenspanic.github.io%2fposts%2funity%2fabout-assembly-definition%2f&amp;hashtags=CSharp%2cUnity">
             <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve" height="30px" width="30px" fill="currentColor">
                 <path
                     d="M512 62.554 L 512 449.446 C 512 483.97 483.97 512 449.446 512 L 62.554 512 C 28.03 512 0 483.97 0 449.446 L 0 62.554 C 0 28.03 28.029 0 62.554 0 L 449.446 0 C 483.971 0 512 28.03 512 62.554 Z M 269.951 190.75 L 182.567 75.216 L 56 75.216 L 207.216 272.95 L 63.9 436.783 L 125.266 436.783 L 235.9 310.383 L 332.567 436.783 L 456 436.783 L 298.367 228.367 L 432.367 75.216 L 371.033 75.216 Z M 127.633 110 L 164.101 110 L 383.481 400.065 L 349.5 400.065 Z" />

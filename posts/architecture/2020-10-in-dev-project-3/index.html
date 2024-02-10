@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="robots" content="index, follow">
 <title>개발중인 프로젝트 구성안 - 3 | penspanic&#39;s Devlog</title>
-<meta name="keywords" content="Architecture, C#, .Net, Unity, Multiplay, .Net">
+<meta name="keywords" content="Architecture, CSharp, dotnet, Unity, Multiplay">
 <meta name="description" content="세번째 포스트는 프로젝트에서 사용중인 Library와 Package들에 대해 소개하려 한다.
 MessagePack GitHub
 프로젝트 시작시 Serialization Library를 어떤 것을 사용할지 꽤 고민했었다.
@@ -136,7 +136,7 @@ Protobuf은 후보 선상에서 제외.
   "name": "개발중인 프로젝트 구성안 - 3",
   "description": "세번째 포스트는 프로젝트에서 사용중인 Library와 Package들에 대해 소개하려 한다.\nMessagePack GitHub\n프로젝트 시작시 Serialization Library를 어떤 것을 사용할지 꽤 고민했었다.\n이전 프로젝트에선 client \u0026lt;-\u0026gt; server 통신시 Protobuf를 사용했었는데, 이게 꽤나 불편했었다. -_-\nIDL을 수정하고, Compile하고, Compile된 결과물을 각각 project에 복사하고.\n(자동화 스크립트가 있다고 하더라도 꽤나 귀찮았다.)\n이번 프로젝트에선 모든 Language를 C#으로 통일했기에, IDL을 사용할 필요가 없어져서\nProtobuf은 후보 선상에서 제외.\n또한 output에 meta-data 없이 payload 만 필요하기 때문에, 그 면에서도 MessagePack이 적합하다고 판단했다.",
   "keywords": [
-    "Architecture", "C#", ".Net", "Unity", "Multiplay", ".Net"
+    "Architecture", "CSharp", "dotnet", "Unity", "Multiplay"
   ],
   "articleBody": "세번째 포스트는 프로젝트에서 사용중인 Library와 Package들에 대해 소개하려 한다.\nMessagePack GitHub\n프로젝트 시작시 Serialization Library를 어떤 것을 사용할지 꽤 고민했었다.\n이전 프로젝트에선 client \u003c-\u003e server 통신시 Protobuf를 사용했었는데, 이게 꽤나 불편했었다. -_-\nIDL을 수정하고, Compile하고, Compile된 결과물을 각각 project에 복사하고.\n(자동화 스크립트가 있다고 하더라도 꽤나 귀찮았다.)\n이번 프로젝트에선 모든 Language를 C#으로 통일했기에, IDL을 사용할 필요가 없어져서\nProtobuf은 후보 선상에서 제외.\n또한 output에 meta-data 없이 payload 만 필요하기 때문에, 그 면에서도 MessagePack이 적합하다고 판단했다.\n그 이외에 ZeroFormatter나 MessagePack 정도로 좁혀져서, 아직 활발히 개발중인 MessagePack으로 선택!\n사용처 client \u003c-\u003e server 통신, server \u003c-\u003e server 통신. TCP 통신, HTTP 통신 모두 사용중. redis value. RDB 특정 칼럼의 값.\n(list 형식 or 다형성 데이터등. migration / 가시성의 중요성 낮을 때.) 게임 플레이 데이터 저장 Format. 장점 IDL - Compile이 필요 없음(Protobuf와 달리).\nMessagePack Codec은 표준이기 때문에 Redis Client등에서 MessagePack binary를 시각화할 수 있음.\nSize가 작음. 별도로 관련 최적화할 필요성이 낮다.\n(CSharp 버전 한정) Library Performance가 잘 나온다.\nv.2 에선 ref struct, ValueTask 등 최신 C# 기능을 사용해 더 최적화된 모습을 볼 수 있다.\n단점 부분적 Deserialize를 할 수 없다.(meta-data 를 저장하지 않는 구조이기 때문에) 별도의 Formatter(Serializer) 코드가 없어도 동작하는데, 이는 il code gen을 통해 동작한다.\n하지만 이것은 Unity il2cpp 환경에선 동작하지 않기 때문에 il code gen을 사용하지 않고\nAOT로 Formatter를 생성할 수 있는 기능을 제공한다. 우리도 사용중.\nDotNetty GitHub\n비동기 이벤트 기반 네트워킹 어플리케이션 프레임워크.\n꽤나 복잡한 1줄 설명.\n사실 위의 내용은 유명한 java 진영 라이브러리 Netty의 것이고, DotNetty는 단순 Netty의 .Net 포팅 버전이다.\n버퍼 풀링, 이벤트 메서드, 이벤트 루프 처리 등을 모두 도맡아서 해주기 때문에\n간단한 설정으로 꽤 정교하게 세팅된 Server를 구성할 수 있다.\n하지만.. 현재 지원 및 개발이 중단된 상태이다.. 커뮤니티에선 더이상 이것을 사용하지 말고, 다른 것을 사용하라고 한다.\n전에 사용했었기에 익숙해 여건상 현재도 사용하고 있는데, 신규 프로젝트에선 사용하지 말아야 할 듯 하다.\n사용처 client, server에서 TCP 소켓을 사용한 네트워킹시 사용한다.\n정식 유니티 지원이 되지 않지만, Dll과 Dependency Dll들을 추출하여\nUnity Project에 넣어 사용중이다.\n장점 꽤나 정교하게 Configuration을 할 수 있고, 그를 통해 High performance를 낼 수 있음.\nex) BufferSize, WaterMark, EventLoop Thread count, Buffer Allocator 단점 지원, 개발이 중단됨. Reference 부족(Netty의 wiki를 참조해야 함). ETC AWS SDK AWS의 여러 서비스를 사용하기 때문에, 당연히 SDK도 사용해 활용한다.\nAWSSDK.CloudWatch AWSSDK.DynamoDBv2 AWSSDK.S3 Amazon.Lambda.Core …\nUnity Project 너무 많아서.. 쪼금 특이한 것들만 추리자면\nMathematics Unity DOTS에서 사용하는 수학 연산 라이브러리이지만, 일반적인 용도로 쓰기에도 나쁘지 않아서 사용중. Test Framework + Performance testing API client-side에서도 test code를 작성하고 있다. 성능 측정 / 프로파일링 용도로도 가끔씩 사용중이다. 공식 UI test framework는 아직 없는 것 같다. 테스트 자동화를 위해선 필요할텐데 곧 나오겠지? NLog 이름대로 Logging 라이브러리. 단순한 용도로만 사용해서 아직 불편함은 느끼지 못했다.\nNewtonSoft.Json 널리 사용되는 Json 라이브러리다.\nUnity 공식 Package 에서도 내부적으로 사용하는 듯 하다.\n\"dependencies\": { \"com.unity.test-framework\": \"1.1.0\", \"com.unity.nuget.newtonsoft-json\": \"2.0.0-preview\" } com.unity.test-framework.performance@2.3.1-preview 의 Dependency.\n클라이언트와 서버가 같은 라이브러리를 사용하기 위해 .Net Core의 System.Text.Json 대신 이것을 도입했다.\n현재 구버전 사용중인데, 신버전의 Performance를 확인해보고 다른 것을 쓸지 고려해봐야 할 것 같다.\nUnity 환경이 아닌 .Net Core 환경에선 System.Text.Json이 더 최신식으로 보인다. Microsoft Docs\n",
   "wordCount" : "484",
@@ -358,10 +358,10 @@ Unity 공식 Package 에서도 내부적으로 사용하는 듯 하다.</p>
   <footer class="post-footer">
     <ul class="post-tags">
       <li><a href="https://penspanic.github.io/tags/architecture/">Architecture</a></li>
-      <li><a href="https://penspanic.github.io/tags/c#/">C#</a></li>
+      <li><a href="https://penspanic.github.io/tags/csharp/">CSharp</a></li>
+      <li><a href="https://penspanic.github.io/tags/dotnet/">dotnet</a></li>
       <li><a href="https://penspanic.github.io/tags/unity/">Unity</a></li>
       <li><a href="https://penspanic.github.io/tags/multiplay/">Multiplay</a></li>
-      <li><a href="https://penspanic.github.io/tags/.net/">.Net</a></li>
     </ul>
 <nav class="paginav">
   <a class="prev" href="https://penspanic.github.io/posts/architecture/2020-10-in-dev-project-4/">
@@ -380,7 +380,7 @@ Unity 공식 Package 에서도 내부적으로 사용하는 듯 하다.</p>
 <ul class="share-buttons">
     <li>
         <a target="_blank" rel="noopener noreferrer" aria-label="share 개발중인 프로젝트 구성안 - 3 on x"
-            href="https://x.com/intent/tweet/?text=%ea%b0%9c%eb%b0%9c%ec%a4%91%ec%9d%b8%20%ed%94%84%eb%a1%9c%ec%a0%9d%ed%8a%b8%20%ea%b5%ac%ec%84%b1%ec%95%88%20-%203&amp;url=https%3a%2f%2fpenspanic.github.io%2fposts%2farchitecture%2f2020-10-in-dev-project-3%2f&amp;hashtags=Architecture%2cC%23%2c.Net%2cUnity%2cMultiplay%2c.Net">
+            href="https://x.com/intent/tweet/?text=%ea%b0%9c%eb%b0%9c%ec%a4%91%ec%9d%b8%20%ed%94%84%eb%a1%9c%ec%a0%9d%ed%8a%b8%20%ea%b5%ac%ec%84%b1%ec%95%88%20-%203&amp;url=https%3a%2f%2fpenspanic.github.io%2fposts%2farchitecture%2f2020-10-in-dev-project-3%2f&amp;hashtags=Architecture%2cCSharp%2cdotnet%2cUnity%2cMultiplay">
             <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve" height="30px" width="30px" fill="currentColor">
                 <path
                     d="M512 62.554 L 512 449.446 C 512 483.97 483.97 512 449.446 512 L 62.554 512 C 28.03 512 0 483.97 0 449.446 L 0 62.554 C 0 28.03 28.029 0 62.554 0 L 449.446 0 C 483.971 0 512 28.03 512 62.554 Z M 269.951 190.75 L 182.567 75.216 L 56 75.216 L 207.216 272.95 L 63.9 436.783 L 125.266 436.783 L 235.9 310.383 L 332.567 436.783 L 456 436.783 L 298.367 228.367 L 432.367 75.216 L 371.033 75.216 Z M 127.633 110 L 164.101 110 L 383.481 400.065 L 349.5 400.065 Z" />

@@ -11,8 +11,15 @@
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-kr</language>
-    <lastBuildDate>Fri, 12 Jan 2024 17:28:08 +0900</lastBuildDate>
+    <lastBuildDate>Mon, 15 Jan 2024 19:38:06 +0900</lastBuildDate>
     <atom:link href="https://penspanic.github.io/tags/optimization/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>C# - struct vs class, struct를 잘 활용하기</title>
+      <link>https://penspanic.github.io/posts/csharp/struct_vs_class/</link>
+      <pubDate>Mon, 15 Jan 2024 19:38:06 +0900</pubDate>
+      <guid>https://penspanic.github.io/posts/csharp/struct_vs_class/</guid>
+      <description>C# - struct vs class</description>
+    </item>
     <item>
       <title>Unity DOTS : Entity Scene과 Mono Scene 비교</title>
       <link>https://penspanic.github.io/posts/unity/dots/dotssceneandmonoscenecomparison/</link>

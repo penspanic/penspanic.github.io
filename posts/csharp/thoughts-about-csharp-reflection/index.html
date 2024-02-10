@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="robots" content="index, follow">
 <title>C# - Reflection에 대한 고찰 | penspanic&#39;s Devlog</title>
-<meta name="keywords" content="C#">
+<meta name="keywords" content="CSharp">
 <meta name="description" content="C# 프로그래밍 씬에서 가장 흔한 오해중 하나는
 &ldquo;Reflection은 느리니까 자제해야 한다.&rdquo;
 라는 것.
@@ -139,7 +139,7 @@ if (!doNotTrack) {
   "name": "C# - Reflection에 대한 고찰",
   "description": "C# 프로그래밍 씬에서 가장 흔한 오해중 하나는\n\u0026ldquo;Reflection은 느리니까 자제해야 한다.\u0026rdquo;\n라는 것.\n처음엔 그냥 그런가보다 했다. C#에 대한 이해도가 많이 부족했으니.\n하지만 필요에 의해 Reflection을 사용하게 됐고, 그것 없이 C# 프로그래밍을 하기에 불편함에 이르렀다.\n제대로 이해하고 적절히 사용해야 할 때가 온 것이다.\n깊게 파보고, 프로파일링 - 최적화 해보고. 그 과정들을 통해 지금은\n올바른 Reflection 사용은 현대적이고 발전된 코드를 작성할 수 있다.\n라고 생각하게 됐다.\n느리다는 것 처리 시간이 오래 걸린다.",
   "keywords": [
-    "C#"
+    "CSharp"
   ],
   "articleBody": "C# 프로그래밍 씬에서 가장 흔한 오해중 하나는\n“Reflection은 느리니까 자제해야 한다.”\n라는 것.\n처음엔 그냥 그런가보다 했다. C#에 대한 이해도가 많이 부족했으니.\n하지만 필요에 의해 Reflection을 사용하게 됐고, 그것 없이 C# 프로그래밍을 하기에 불편함에 이르렀다.\n제대로 이해하고 적절히 사용해야 할 때가 온 것이다.\n깊게 파보고, 프로파일링 - 최적화 해보고. 그 과정들을 통해 지금은\n올바른 Reflection 사용은 현대적이고 발전된 코드를 작성할 수 있다.\n라고 생각하게 됐다.\n느리다는 것 처리 시간이 오래 걸린다. 할당이 잦다 / 메모리 사용량이 많다.\n(.Net 에선 GCHeap의 상태가 프로세스 전반에 영향을 주니) 내가 이해하고 있는 느리다는 것의 의미는 이정도이다.\n그럼 위 두가지를 개선할 수 있다면?\n실 예시를 들어서 보자.\n최적화 예시 1. 캐싱 1.1. Assembly 내의 특정 타입의 하위 타입들을 찾을 때 public void ForEachThatInherits(Type type, Action\u003cType\u003e action) { var derivedTypes = targetType.Assembly.GetTypes().Where(targetType.IsAssignableFrom).ToArray(); foreach(Type eachType in derivedTypes) { action?.Invoke(eachType); } } 위의 코드는 실로 엄청난 오버헤드를 가지고 있다.. 경험담.\n하지만 저 표현식의 결과는 (대부분의 상황에서) 불변이다. 그렇다면 Caching 가능!\n아래는 Result Caching 를 통한 최적화된 코드.\npublic void ForEachThatInherits(Type type, Action\u003cType\u003e action) { var derivedTypes = DerivedTypeCache.GetDerivedTypes(type, type.Assembly); foreach(Type eachType in derivedTypes) { action?.Invoke(eachType); } } 필자가 작성해 사용중인 DerivedTypeCache.cs\r// no interface, abstract class included.\rpublic static class DerivedTypeCache\r{\rpublic struct DeriveTypeContext\r{\rpublic Assembly[] Assemblies;\rpublic Type[] DerivedTypes;\r}\rprivate static object _lockObject = new object();\rprivate static Dictionary\u003c(Type, Assembly[]), DeriveTypeContext\u003e _contexts = new Dictionary\u003c(Type, Assembly[]), DeriveTypeContext\u003e();\rpublic static ReadOnlyCollection GetDerivedTypes(Type type, params Assembly[] assemblies)\r{\rlock (_lockObject)\r{\rif (_contexts.TryGetValue((type, assemblies), out DeriveTypeContext context) == true)\r{\rreturn new ReadOnlyCollection(context.DerivedTypes);\r}\rInternalInit(type, assemblies);\rreturn new ReadOnlyCollection(_contexts[(type, assemblies)].DerivedTypes);\r}\r}\rprivate static void InternalInit(Type type, Assembly[] assemblies)\r{\rDeriveTypeContext context = new DeriveTypeContext();\rif (assemblies != null \u0026\u0026 assemblies.Length \u003e 0)\r{\rList temp = new List();\rforeach (Assembly assembly in assemblies)\r{\rtemp.AddRange(assembly.GetTypes().Where(t =\u003e\rtype.IsAssignableFrom(t) \u0026\u0026 t != type \u0026\u0026 t.IsInterface == false \u0026\u0026 t.IsAbstract == false)\r.OrderBy(t =\u003e t.Name)\r);\r}\rcontext.Assemblies = assemblies;\rcontext.DerivedTypes = temp.ToArray();\r}\relse\r{\rcontext.DerivedTypes = type.Assembly.GetTypes().Where(t =\u003e type.IsAssignableFrom(t) \u0026\u0026 t != type \u0026\u0026 t.IsInterface == false \u0026\u0026 t.IsAbstract == false)\r.OrderBy(t =\u003e t.Name).ToArray();\r}\r_contexts.Add((type, assemblies), context);\r}\r}\r1.1. 특정 조건에 맞는 Method들을 찾을 때 위 예제와 동일한 방식으로 Result Caching 할 수 있다.\nType[] targetTypes = new[] {typeof(int), typeof(System.IO.File), typeof(System.Diagnostics.Activity)}; for (int i = 0; i \u003c 10; ++i) NoCaching(targetTypes); for (int i = 0; i \u003c 10; ++i) Caching(targetTypes); ... public void NoCaching(Type[] types) { foreach (Type type in targetTypes) var result = type.GetMethods(BindingFlags.Public | BindingFlags.Instance); } public void Caching(Type[] types) { foreach (Type type in targetTypes) var result = TypeInfoHolderHelper.GetMethods(type, (m) =\u003e m.IsPublic \u0026\u0026 m.IsStatic == false); } Method N Mean Error StdDev NoCaching 10000 77.33 ms 1.128 ms 1.055 ms Caching 10000 32.40 ms 0.447 ms 0.396 ms 직접 측정한 결과. 실 코드\n2. 기능별 심화 사용 2.1. MethodInfo Invoke 자제 MethodInfo.Invoke()는 Delegate를 생성하여 호출하는 것보다 훨씬 느리다.\n참조 : Method 호출 퍼포먼스 테스트\n2.2. Constructor 가장 유용한 Reflection 기능중 하나는 Type 을 가지고 해당 인스턴스를 만드는 것이다. 하지만 보편적인 Activator.CreateInstance()는 매우 느리다. 그럴 땐 Expression 을 사용해 더 빠르게 인스턴스를 생성할 수 있다.\nMethod N Mean Error StdDev CreateInstance 10000 2.944 us 0.0396 us 0.0370 us CreateInstance_Activator 10000 467.544 us 9.1044 us 8.5163 us CreateInstance_Expression 10000 142.403 us 2.7698 us 2.3129 us 직접 측정한 결과. 실 코드\n2.3. Boxing / Unboxing 회피등 .Net 레벨 최적화 Reflection 관련 없지만, .Net 레벨 최적화를 통해 엄청난 성능 개선을 이뤄낼 수 있다.\n적다보니 Reflection 최적화 팁처럼 돼버렸다..\n숙련된 C# 프로그래머들은 Reflection에 대한 오해를 하지 않을 거라 생각한다.\n본인이 고민했던 부분을 공유하고 싶어서 글을 작성했다.\n.Net 환경별로 결과가 상이할 수 있다.\n",
   "wordCount" : "587",
@@ -457,7 +457,7 @@ if (!doNotTrack) {
 
   <footer class="post-footer">
     <ul class="post-tags">
-      <li><a href="https://penspanic.github.io/tags/c#/">C#</a></li>
+      <li><a href="https://penspanic.github.io/tags/csharp/">CSharp</a></li>
     </ul>
 <nav class="paginav">
   <a class="prev" href="https://penspanic.github.io/posts/csharp/csharp-unmanaged-memory/">
@@ -476,7 +476,7 @@ if (!doNotTrack) {
 <ul class="share-buttons">
     <li>
         <a target="_blank" rel="noopener noreferrer" aria-label="share C# - Reflection에 대한 고찰 on x"
-            href="https://x.com/intent/tweet/?text=C%23%20-%20Reflection%ec%97%90%20%eb%8c%80%ed%95%9c%20%ea%b3%a0%ec%b0%b0&amp;url=https%3a%2f%2fpenspanic.github.io%2fposts%2fcsharp%2fthoughts-about-csharp-reflection%2f&amp;hashtags=C%23">
+            href="https://x.com/intent/tweet/?text=C%23%20-%20Reflection%ec%97%90%20%eb%8c%80%ed%95%9c%20%ea%b3%a0%ec%b0%b0&amp;url=https%3a%2f%2fpenspanic.github.io%2fposts%2fcsharp%2fthoughts-about-csharp-reflection%2f&amp;hashtags=CSharp">
             <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve" height="30px" width="30px" fill="currentColor">
                 <path
                     d="M512 62.554 L 512 449.446 C 512 483.97 483.97 512 449.446 512 L 62.554 512 C 28.03 512 0 483.97 0 449.446 L 0 62.554 C 0 28.03 28.029 0 62.554 0 L 449.446 0 C 483.971 0 512 28.03 512 62.554 Z M 269.951 190.75 L 182.567 75.216 L 56 75.216 L 207.216 272.95 L 63.9 436.783 L 125.266 436.783 L 235.9 310.383 L 332.567 436.783 L 456 436.783 L 298.367 228.367 L 432.367 75.216 L 371.033 75.216 Z M 127.633 110 L 164.101 110 L 383.481 400.065 L 349.5 400.065 Z" />

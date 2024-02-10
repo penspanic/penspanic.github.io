@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="robots" content="index, follow">
 <title>C# Unmanaged Memory | penspanic&#39;s Devlog</title>
-<meta name="keywords" content="C#">
+<meta name="keywords" content="CSharp">
 <meta name="description" content="Managed Memory CLR(Common Language Runtime)이 관리하는 메모리. Garbage Collection의 대상이 된다.
 Unmanaged Memory Managed Memory가 아닌 것.
 C# 에서도 C&#43;&#43; 에서처럼 직접 메모리를 할당 할 수 있다.
@@ -124,7 +124,7 @@ IntPtr memory = Marshal.AllocHGlobal(100); for (int i = 0; i &lt; 100; &#43;&#43
   "name": "C# Unmanaged Memory",
   "description": "Managed Memory CLR(Common Language Runtime)이 관리하는 메모리. Garbage Collection의 대상이 된다.\nUnmanaged Memory Managed Memory가 아닌 것.\nC# 에서도 C++ 에서처럼 직접 메모리를 할당 할 수 있다.\nIntPtr memory = Marshal.AllocHGlobal(100); for (int i = 0; i \u0026lt; 100; ++i) { ((byte*) memory)[i] = (byte)(i + 1); } Marshal.FreeHGlobal(memory); stackalloc 표현식 Stack 에 메모리가 할당됨. 그 Stack을 벗어날 때 자동으로 메모리 해제.\n일시적인 계산을 위한 메모리를 사용할 때, stackalloc을 사용함으로써 Managed Heap에 할당되지 않게 하여 최적화 가능.",
   "keywords": [
-    "C#"
+    "CSharp"
   ],
   "articleBody": "Managed Memory CLR(Common Language Runtime)이 관리하는 메모리. Garbage Collection의 대상이 된다.\nUnmanaged Memory Managed Memory가 아닌 것.\nC# 에서도 C++ 에서처럼 직접 메모리를 할당 할 수 있다.\nIntPtr memory = Marshal.AllocHGlobal(100); for (int i = 0; i \u003c 100; ++i) { ((byte*) memory)[i] = (byte)(i + 1); } Marshal.FreeHGlobal(memory); stackalloc 표현식 Stack 에 메모리가 할당됨. 그 Stack을 벗어날 때 자동으로 메모리 해제.\n일시적인 계산을 위한 메모리를 사용할 때, stackalloc을 사용함으로써 Managed Heap에 할당되지 않게 하여 최적화 가능.\npublic void RemoveAll() // Dash.Core.Systems.GeneratorSystem { Span\u003cint\u003e serials = stackalloc int[_generators.Count]; int index = 0; foreach (int serial in _generators.Keys) { serials[index++] = serial; } foreach (int serial in serials) { _generators.Remove(serial); } } 사견 C#을 막연하게 C, C++ 보다 느리다고 생각하는 사람들이 많다.\n심지어 C#을 메인 스킬로 다루는 사람들까지도.\n어떤 부분에서 퍼포먼스가 떨어지는 것인지, 그걸 해결하기 위한 방법이 있는지에 대해\n자세히 알아야 할 필요가 있다고 생각한다.\nN년간 C# / .Net에 관심을 가저오며 지금은 **C#으로도 *High Performance Program*을 만들 수 있다, 하지만 쉽지 않을 것이다** 라는 결론에 도달했다.\r그렇게 생각하게 된 이유를 공유하고 싶고,\n.Net 및 Managed Langauge에 대한 편견을 없애보고 싶다.\n",
   "wordCount" : "179",
@@ -278,7 +278,7 @@ N년간 C# / .Net에 관심을 가저오며 지금은
 
   <footer class="post-footer">
     <ul class="post-tags">
-      <li><a href="https://penspanic.github.io/tags/c#/">C#</a></li>
+      <li><a href="https://penspanic.github.io/tags/csharp/">CSharp</a></li>
     </ul>
 <nav class="paginav">
   <a class="prev" href="https://penspanic.github.io/posts/architecture/2020-10-in-dev-project-1/">
@@ -297,7 +297,7 @@ N년간 C# / .Net에 관심을 가저오며 지금은
 <ul class="share-buttons">
     <li>
         <a target="_blank" rel="noopener noreferrer" aria-label="share C# Unmanaged Memory on x"
-            href="https://x.com/intent/tweet/?text=C%23%20Unmanaged%20Memory&amp;url=https%3a%2f%2fpenspanic.github.io%2fposts%2fcsharp%2fcsharp-unmanaged-memory%2f&amp;hashtags=C%23">
+            href="https://x.com/intent/tweet/?text=C%23%20Unmanaged%20Memory&amp;url=https%3a%2f%2fpenspanic.github.io%2fposts%2fcsharp%2fcsharp-unmanaged-memory%2f&amp;hashtags=CSharp">
             <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve" height="30px" width="30px" fill="currentColor">
                 <path
                     d="M512 62.554 L 512 449.446 C 512 483.97 483.97 512 449.446 512 L 62.554 512 C 28.03 512 0 483.97 0 449.446 L 0 62.554 C 0 28.03 28.029 0 62.554 0 L 449.446 0 C 483.971 0 512 28.03 512 62.554 Z M 269.951 190.75 L 182.567 75.216 L 56 75.216 L 207.216 272.95 L 63.9 436.783 L 125.266 436.783 L 235.9 310.383 L 332.567 436.783 L 456 436.783 L 298.367 228.367 L 432.367 75.216 L 371.033 75.216 Z M 127.633 110 L 164.101 110 L 383.481 400.065 L 349.5 400.065 Z" />
