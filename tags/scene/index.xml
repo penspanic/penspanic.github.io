@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Scene on penspanic&#39;s Devlog</title>
+    <link>https://penspanic.github.io/tags/scene/</link>
+    <description>Recent content in Scene on penspanic&#39;s Devlog</description>
+    <image>
+      <title>penspanic&#39;s Devlog</title>
+      <url>https://penspanic.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>https://penspanic.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+    </image>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ko-kr</language>
+    <lastBuildDate>Fri, 01 Mar 2024 22:44:56 +0900</lastBuildDate>
+    <atom:link href="https://penspanic.github.io/tags/scene/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Unity DOTS : Scene Architecture</title>
+      <link>https://penspanic.github.io/posts/unity/dots/dots-scene-architecture/</link>
+      <pubDate>Fri, 01 Mar 2024 22:44:56 +0900</pubDate>
+      <guid>https://penspanic.github.io/posts/unity/dots/dots-scene-architecture/</guid>
+      <description>Unity DOTS의 씬 시스템에 대한 기술적 이해</description>
+    </item>
+    <item>
+      <title>Unity DOTS : Entity Scene과 Mono Scene 비교</title>
+      <link>https://penspanic.github.io/posts/unity/dots/dotssceneandmonoscenecomparison/</link>
+      <pubDate>Fri, 12 Jan 2024 17:28:08 +0900</pubDate>
+      <guid>https://penspanic.github.io/posts/unity/dots/dotssceneandmonoscenecomparison/</guid>
+      <description>Unity의 DOTS 씬과 일반 씬 기술적 비교</description>
+    </item>
+  </channel>
+</rss>

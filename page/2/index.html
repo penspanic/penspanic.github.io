@@ -14,7 +14,7 @@
 <meta name="google-site-verification" content="XYZabc">
 <meta name="yandex-verification" content="XYZabc">
 <meta name="msvalidate.01" content="XYZabc">
-<link crossorigin="anonymous" href="/assets/css/stylesheet.e087fd1dc76e73a35ae6d7028ddc1ba41e0131e7f9b3a6e2d019a208e6d6c4b5.css" integrity="sha256-4If9Hcduc6Na5tcCjdwbpB4BMef5s6bi0BmiCObWxLU=" rel="preload stylesheet" as="style">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.7dbfc0648bac97c34091d7d9d41b8dbae0b598ce10d9c39d6092e1db498885e3.css" integrity="sha256-fb/AZIusl8NAkdfZ1BuNuuC1mM4Q2cOdYJLh20mIheM=" rel="preload stylesheet" as="style">
 <link rel="icon" href="https://penspanic.github.io/favicon.jpg">
 <link rel="icon" type="image/png" sizes="16x16" href="https://penspanic.github.io/%3Clink%20/%20abs%20url%3E">
 <link rel="icon" type="image/png" sizes="32x32" href="https://penspanic.github.io/%3Clink%20/%20abs%20url%3E">
@@ -166,6 +166,24 @@ if (!doNotTrack) {
 
 <article class="post-entry"> 
   <header class="entry-header">
+    <h2 class="entry-hint-parent">C# 9.0 신기능 프리뷰
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>C# 9.0 써보기전 주관적 프리뷰 이번에 릴리즈된 C# 9.0의 기능을 살펴봤다.
+MS Docs 링크에 워낙 잘 설명돼있어서 기능에 대한 설명 자체는 자세히 다루지 않겠다.
+record type 새로운 Reference Type이 추가되었다.
+몰랐는데, class 만 reference type 인줄 알았는데 익명 타입도 reference type에 포함된다고 한다.
+어차피 C# 컴파일러가 익명 타입을 class로 변환할 것 같지만..
+역시 그렇다. 내부적으론 Tuple&lt;,&gt; 등과 비슷하게 구현됐다고 보면 될 것 같음.
+내가 생각하는 도입 사유 기존의 class(reference type)으로 immutable type을 구현하기 좀 까다로웠다....</p>
+  </div>
+  <footer class="entry-footer"><span title='2020-12-07 18:20:29 +0900 KST'>December 7, 2020</span>&nbsp;·&nbsp;4 min&nbsp;·&nbsp;661 words&nbsp;·&nbsp;penspanic</footer>
+  <a class="entry-link" aria-label="post link to C# 9.0 신기능 프리뷰" href="https://penspanic.github.io/posts/csharp/csharp-9-0-features-preview/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
     <h2 class="entry-hint-parent">C# lock의 내부 구현
     </h2>
   </header>
@@ -239,23 +257,6 @@ data-dash, lib-dash etc AWS Lambda 에서 실행되는 MicroService 등 눈치 �
   </div>
   <footer class="entry-footer"><span title='2020-10-02 18:20:29 +0900 KST'>October 2, 2020</span>&nbsp;·&nbsp;2 min&nbsp;·&nbsp;281 words&nbsp;·&nbsp;penspanic</footer>
   <a class="entry-link" aria-label="post link to 개발중인 프로젝트 구성안 - 2" href="https://penspanic.github.io/posts/architecture/2020-10-in-dev-project-2/"></a>
-</article>
-
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2 class="entry-hint-parent">개발중인 프로젝트 구성안 - 1
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>이번 프로젝트 리드를 하며 아키텍쳐를 잡을 때 최우선 사항은 생산성 이었다.
-대형 프로젝트도 아니고, 소수의 프로그래머가 지속적으로 바뀌는 요구사항과 짧은 일정을 소화하려면 생산성이 가장 중요하다고 생각했다.
-유려한 아키텍쳐 및 프로젝트 구성 샐틈없는 강력한 보안의 코드 / 동기화 모델 엄청난 Throughput을 보여주는 고성능 프로그램 을 다 충족시키며 우리 팀의 목적 달성은 현실적으로 어렵다고 판단했다.
-결국 선택과 집중이 필요한 부분인데..
-게임 개발 경력이 아직 길진 않지만,
-재밌는 게임을 만들기 위해선 수많은 수행 착오를 거쳐야 하고...</p>
-  </div>
-  <footer class="entry-footer"><span title='2020-10-01 18:20:29 +0900 KST'>October 1, 2020</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;136 words&nbsp;·&nbsp;penspanic</footer>
-  <a class="entry-link" aria-label="post link to 개발중인 프로젝트 구성안 - 1" href="https://penspanic.github.io/posts/architecture/2020-10-in-dev-project-1/"></a>
 </article>
 <footer class="page-footer">
   <nav class="pagination">
