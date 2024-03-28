@@ -11,8 +11,36 @@
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-kr</language>
-    <lastBuildDate>Fri, 01 Mar 2024 22:44:56 +0900</lastBuildDate>
+    <lastBuildDate>Thu, 28 Mar 2024 22:57:15 +0900</lastBuildDate>
     <atom:link href="https://penspanic.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Drawing</title>
+      <link>https://penspanic.github.io/tags/drawing/</link>
+      <pubDate>Thu, 28 Mar 2024 22:57:15 +0900</pubDate>
+      <guid>https://penspanic.github.io/tags/drawing/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Graphics</title>
+      <link>https://penspanic.github.io/tags/graphics/</link>
+      <pubDate>Thu, 28 Mar 2024 22:57:15 +0900</pubDate>
+      <guid>https://penspanic.github.io/tags/graphics/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Java</title>
+      <link>https://penspanic.github.io/tags/java/</link>
+      <pubDate>Thu, 28 Mar 2024 22:57:15 +0900</pubDate>
+      <guid>https://penspanic.github.io/tags/java/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Processing</title>
+      <link>https://penspanic.github.io/tags/processing/</link>
+      <pubDate>Thu, 28 Mar 2024 22:57:15 +0900</pubDate>
+      <guid>https://penspanic.github.io/tags/processing/</guid>
+      <description></description>
+    </item>
     <item>
       <title>CSharp</title>
       <link>https://penspanic.github.io/tags/csharp/</link>

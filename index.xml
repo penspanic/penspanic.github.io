@@ -11,8 +11,15 @@
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-kr</language>
-    <lastBuildDate>Fri, 01 Mar 2024 22:44:56 +0900</lastBuildDate>
+    <lastBuildDate>Thu, 28 Mar 2024 22:57:15 +0900</lastBuildDate>
     <atom:link href="https://penspanic.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Processing - Shape 안에 그라데이션 넣기</title>
+      <link>https://penspanic.github.io/posts/processing/adding-gradient-to-shape/</link>
+      <pubDate>Thu, 28 Mar 2024 22:57:15 +0900</pubDate>
+      <guid>https://penspanic.github.io/posts/processing/adding-gradient-to-shape/</guid>
+      <description>PGraphics sourceImage; PGraphics maskImage; void setup() { size(512, 512); // 그라데이션된 이미지 그리기 color startColor = #ff0000; color endColor = #0000ff; sourceImage = createGraphics(512, 512); sourceImage.beginDraw(); for (int i = 0; i &amp;lt; sourceImage.width; ++i) { color c = lerpColor(startColor, endColor, (float)i / sourceImage.width); sourceImage.stroke(c); println(sourceImage.width); sourceImage.line(0, i, sourceImage.width, i); } sourceImage.endDraw(); // Shape 그리기 maskImage = createGraphics(512, 512); maskImage.beginDraw(); // 이 부분을 각자 원하는대로 바꿔야 한다. maskImage.triangle(30, 480, 256, 30, 480, 480); maskImage.</description>
+    </item>
     <item>
       <title>Unity DOTS : Scene Architecture</title>
       <link>https://penspanic.github.io/posts/unity/dots/dots-scene-architecture/</link>

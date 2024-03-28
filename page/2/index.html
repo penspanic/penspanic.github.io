@@ -166,6 +166,21 @@ if (!doNotTrack) {
 
 <article class="post-entry"> 
   <header class="entry-header">
+    <h2 class="entry-hint-parent">OpenCVSharp Frame Buffer Pooling
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>OpenCVSharp을 사용해 비디오의 매 프레임을 가져오는 기능을 개발했다.
+private static void ReadEachFrame_Normal() { string path = &#34;path/top/your/video.mp4&#34;; VideoCapture capture = new VideoCapture(path); capture.Open(path); using Mat frame = new Mat(); while (capture.Read(frame)) { byte[] bytes = frame.ToBytes(); } } OpenCVSharp 라이브러리에는 내가 아는한 쉽게 프레임 버퍼를 입력한 버퍼로 가져오거나, 풀링이 적용된 형태로 가져올 수 있는 방법이 없다.
+Mat.ToBytes()로 새로 생성된 byte[] 객체를 반환받는 방법이 가장 일반적으로 보였다.
+내가 사용하는 케이스에선 동시에 여러 비디오의 프레임을 가져오다보니...</p>
+  </div>
+  <footer class="entry-footer"><span title='2023-12-28 19:15:51 +0900 KST'>December 28, 2023</span>&nbsp;·&nbsp;2 min&nbsp;·&nbsp;356 words&nbsp;·&nbsp;penspanic</footer>
+  <a class="entry-link" aria-label="post link to OpenCVSharp Frame Buffer Pooling" href="https://penspanic.github.io/posts/csharp/opencvsharpbufferpooling/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
     <h2 class="entry-hint-parent">C# 9.0 신기능 프리뷰
     </h2>
   </header>
@@ -236,27 +251,6 @@ Protobuf은 후보 선상에서 제외.
   </div>
   <footer class="entry-footer"><span title='2020-10-04 18:20:29 +0900 KST'>October 4, 2020</span>&nbsp;·&nbsp;3 min&nbsp;·&nbsp;484 words&nbsp;·&nbsp;penspanic</footer>
   <a class="entry-link" aria-label="post link to 개발중인 프로젝트 구성안 - 3" href="https://penspanic.github.io/posts/architecture/2020-10-in-dev-project-3/"></a>
-</article>
-
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2 class="entry-hint-parent">개발중인 프로젝트 구성안 - 2
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>먼저, Repository에 대해.
-Repository client-dash 유니티 클라이언트 프로젝트
-Unity 2019.4x, .Net 4.x
-data-dash, lib-dash server-dash 로비서버, 매치서버, 인게임 서버등 서비스에 필요한 서버들의 모음
-.Net Core 3.x
-data-dash, lib-dash admin-dash 관리자툴, 유저 및 게임 서비스에 대한 제어
-.Net Core 3.x
-data-dash, lib-dash dummyclient-dash 더미 클라이언트. 인게임 전투, API 요청, 특수한 시나리오등을 수행하는 클라이언트
-.Net Core 3.x
-data-dash, lib-dash etc AWS Lambda 에서 실행되는 MicroService 등 눈치 채신 분들도 있겠지만, data-dash, lib-dash는 Submodule 이다....</p>
-  </div>
-  <footer class="entry-footer"><span title='2020-10-02 18:20:29 +0900 KST'>October 2, 2020</span>&nbsp;·&nbsp;2 min&nbsp;·&nbsp;281 words&nbsp;·&nbsp;penspanic</footer>
-  <a class="entry-link" aria-label="post link to 개발중인 프로젝트 구성안 - 2" href="https://penspanic.github.io/posts/architecture/2020-10-in-dev-project-2/"></a>
 </article>
 <footer class="page-footer">
   <nav class="pagination">

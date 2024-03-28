@@ -11,8 +11,15 @@
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-kr</language>
-    <lastBuildDate>Fri, 01 Mar 2024 22:44:56 +0900</lastBuildDate>
+    <lastBuildDate>Thu, 28 Mar 2024 22:57:15 +0900</lastBuildDate>
     <atom:link href="https://penspanic.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Processing</title>
+      <link>https://penspanic.github.io/categories/processing/</link>
+      <pubDate>Thu, 28 Mar 2024 22:57:15 +0900</pubDate>
+      <guid>https://penspanic.github.io/categories/processing/</guid>
+      <description></description>
+    </item>
     <item>
       <title>DOTS</title>
       <link>https://penspanic.github.io/categories/dots/</link>

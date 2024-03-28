@@ -196,6 +196,18 @@ if (!doNotTrack) {
 
 <article class="post-entry"> 
   <header class="entry-header">
+    <h2 class="entry-hint-parent">Processing - Shape 안에 그라데이션 넣기
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>PGraphics sourceImage; PGraphics maskImage; void setup() { size(512, 512); // 그라데이션된 이미지 그리기 color startColor = #ff0000; color endColor = #0000ff; sourceImage = createGraphics(512, 512); sourceImage.beginDraw(); for (int i = 0; i &lt; sourceImage.width; &#43;&#43;i) { color c = lerpColor(startColor, endColor, (float)i / sourceImage.width); sourceImage.stroke(c); println(sourceImage.width); sourceImage.line(0, i, sourceImage.width, i); } sourceImage.endDraw(); // Shape 그리기 maskImage = createGraphics(512, 512); maskImage.beginDraw(); // 이 부분을 각자 원하는대로 바꿔야 한다. maskImage.triangle(30, 480, 256, 30, 480, 480); maskImage....</p>
+  </div>
+  <footer class="entry-footer"><span title='2024-03-28 22:57:15 +0900 KST'>March 28, 2024</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;102 words&nbsp;·&nbsp;penspanic</footer>
+  <a class="entry-link" aria-label="post link to Processing - Shape 안에 그라데이션 넣기" href="https://penspanic.github.io/posts/processing/adding-gradient-to-shape/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
     <h2 class="entry-hint-parent">Unity DOTS : Scene Architecture
     </h2>
   </header>
@@ -240,21 +252,6 @@ if (!doNotTrack) {
   </div>
   <footer class="entry-footer"><span title='2024-01-02 23:01:50 +0900 KST'>January 2, 2024</span>&nbsp;·&nbsp;2 min&nbsp;·&nbsp;422 words&nbsp;·&nbsp;penspanic</footer>
   <a class="entry-link" aria-label="post link to Happy Hacking Studio Review" href="https://penspanic.github.io/posts/personal/hhkb_studio_review/"></a>
-</article>
-
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2 class="entry-hint-parent">OpenCVSharp Frame Buffer Pooling
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>OpenCVSharp을 사용해 비디오의 매 프레임을 가져오는 기능을 개발했다.
-private static void ReadEachFrame_Normal() { string path = &#34;path/top/your/video.mp4&#34;; VideoCapture capture = new VideoCapture(path); capture.Open(path); using Mat frame = new Mat(); while (capture.Read(frame)) { byte[] bytes = frame.ToBytes(); } } OpenCVSharp 라이브러리에는 내가 아는한 쉽게 프레임 버퍼를 입력한 버퍼로 가져오거나, 풀링이 적용된 형태로 가져올 수 있는 방법이 없다.
-Mat.ToBytes()로 새로 생성된 byte[] 객체를 반환받는 방법이 가장 일반적으로 보였다.
-내가 사용하는 케이스에선 동시에 여러 비디오의 프레임을 가져오다보니...</p>
-  </div>
-  <footer class="entry-footer"><span title='2023-12-28 19:15:51 +0900 KST'>December 28, 2023</span>&nbsp;·&nbsp;2 min&nbsp;·&nbsp;356 words&nbsp;·&nbsp;penspanic</footer>
-  <a class="entry-link" aria-label="post link to OpenCVSharp Frame Buffer Pooling" href="https://penspanic.github.io/posts/csharp/opencvsharpbufferpooling/"></a>
 </article>
 <footer class="page-footer">
   <nav class="pagination">
